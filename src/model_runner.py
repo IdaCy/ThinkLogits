@@ -32,7 +32,7 @@ def generate_with_token_probabilities(
     max_new_tokens: int = 128
 ) -> Tuple[str, List[str], List[Dict[str, Any]]]:
     """
-    Generates a model response to prompt, capturing:
+    Generates a model response to prompt, taking:
       - The final decoded text,
       - A list of tokens the model generated (step by step),
       - Probabilities (p(A), p(B), p(C), p(D)) at each generation step.
