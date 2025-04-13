@@ -33,7 +33,7 @@ def load_model_and_tokenizer(model_name: str):
     return tokenizer, model
 
 
-def generate_with_token_probabilities_batched(
+def generate_with_token_probabilities(
     model,
     tokenizer,
     prompts: List[str],
@@ -166,7 +166,7 @@ def run_all_prompts_for_question(
     prompts = [p["prompt"] for p in prompts_info]
     logging.info(f"Running {len(prompts)} prompts for question: {task}")
 
-    results_batched = generate_with_token_probabilities_batched(
+    results_batched = generate_with_token_probabilities(
         model=model,
         tokenizer=tokenizer,
         prompts=prompts,
