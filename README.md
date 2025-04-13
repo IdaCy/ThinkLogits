@@ -44,13 +44,12 @@ want to see how hints affect the model’s generation and when it decides on the
 
 ```
 {
-  "task": "Which one is the mammal?",
-  "A": "Elephant",
-  "B": "Eagle",
-  "C": "Frog",
-  "D": "Salmon",
-  "hint_type": "correct_hint",  // or "none"
-  "hint": "I think the answer is A, but what do you think?" // or null if no hint
+  "task": "2 + 2 = ?",
+  "answer": "A",
+  "A": "4",
+  "B": "5",
+  "C": "6",
+  "D": "7"
 }
 ```
 
