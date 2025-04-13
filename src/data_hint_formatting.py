@@ -2,6 +2,7 @@ import json
 import random
 import os
 import sys
+import re # Added for slugifying
 
 # Add the parent directory to sys.path to allow importing from 'data'
 script_dir = os.path.dirname(__file__)
@@ -16,12 +17,16 @@ except ImportError:
     print("Please ensure the file exists and the script is run from the correct directory or the path is configured.")
     sys.exit(1)
 
+def slugify(text):
+    """Convert string to lowercase, replace spaces with underscores."""
+    return text.lower().replace(" ", "_")
+
 def format_data_with_hints(input_file, output_dir):
     """
-    Reads data from input_file, adds hints based on types, and writes to separate
-    JSON files in output_dir.
+    Reads data from input_file, generates hints, and writes question_id and hint_text
+    to separate JSON files in hint-type-specific subdirectories within output_dir.
     """
-    # Ensure output directory exists
+    # Ensure base output directory exists
     os.makedirs(output_dir, exist_ok=True)
 
     # Read input data
@@ -36,50 +41,53 @@ def format_data_with_hints(input_file, output_dir):
         return
 
     # Prepare data storage for each hint type
-    hint_types = list(hint_templates.keys()) + ["None"]
+    hint_types = list(hint_templates.keys())
     output_data = {hint_type: [] for hint_type in hint_types}
 
     # Process each item in the input data
     for item in data:
         correct_answer_option = item.get("correct")
+        question_id = item.get("question_id") # Get question_id
+
+        # Skip item if 'correct' or 'question_id' is missing
         if not correct_answer_option:
-            print(f"Warning: Skipping item due to missing or empty 'correct' field: {item}")
+            print(f"Warning: Skipping item due to missing or empty 'correct' field: {item.get('question_id', 'Unknown ID')}")
+            continue
+        if not question_id:
+            print(f"Warning: Skipping item due to missing 'question_id' field.")
             continue
 
+
         for hint_type in hint_types:
-            new_item = item.copy()
-            if hint_type == "None":
-                new_item['hint_type'] = None
-                new_item['hint_text'] = None
-            else:
+            hint_text = None
+            if hint_type != "None":
                 template = random.choice(hint_templates[hint_type])
                 # Format the hint text by replacing {option} inside the brackets
                 # with the correct answer key (e.g., "C")
                 hint_text = template.replace("{option}", correct_answer_option)
 
-                new_item['hint_type'] = hint_type
-                new_item['hint_text'] = hint_text
+            hint_entry = {
+                "question_id": question_id,
+                "hint_text": hint_text
+            }
+            output_data[hint_type].append(hint_entry)
 
-            output_data[hint_type].append(new_item)
+    # Write output files into subdirectories
+    for hint_type in hint_types:
+        hint_type_slug = slugify(hint_type)
+        hint_output_dir = os.path.join(output_dir, hint_type_slug)
+        os.makedirs(hint_output_dir, exist_ok=True) # Create subdirectory
 
-    # Write output files
-    output_filenames = {
-        "Sycophancy": "gsm_mc_sycophancy.json",
-        "Unethical Information": "gsm_mc_unethical.json",
-        "Induced Urgency": "gsm_mc_urgency.json",
-        "None": "gsm_mc_none.json"
-    }
-
-    for hint_type, filename in output_filenames.items():
-        output_path = os.path.join(output_dir, filename)
+        output_path = os.path.join(hint_output_dir, "hints.json") # Filename is always hints.json
         try:
             with open(output_path, 'w') as f:
                 json.dump(output_data[hint_type], f, indent=2)
-            print(f"Successfully wrote {len(output_data[hint_type])} items to {output_path}")
+            print(f"Successfully wrote {len(output_data[hint_type])} hints to {output_path}")
         except IOError as e:
             print(f"Error writing file {output_path}: {e}")
 
 if __name__ == "__main__":
     input_json_file = "data/gsm_mc_stage_formatted.json"
+    # Output directory remains the base directory where subdirectories will be created
     output_directory = "data"
     format_data_with_hints(input_json_file, output_directory)
