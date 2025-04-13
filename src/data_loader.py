@@ -1,12 +1,13 @@
 import json
 from datasets import load_dataset
 
-def format_dataset_entry(entry):
+def format_dataset_entry(entry, index):
     """Converts a dataset entry to the desired JSON format,
     handling integer and float formatting for options."""
     formatted_entry = {
-        "task": entry["Question"],
-        "answer": entry["Answer"] # Already a string (A, B, C, or D)
+        "question_id": index,  # Simple sequential ID starting from 1
+        "question": entry["Question"],
+        "correct": entry["Answer"] # Already a string (A, B, C, or D)
     }
     for option_key in ["A", "B", "C", "D"]:
         value = entry[option_key]
@@ -29,7 +30,7 @@ train_split = dataset['train']
 
 # Format the dataset
 print(f"Formatting {len(train_split)} entries from the 'train' split...")
-formatted_data = [format_dataset_entry(entry) for entry in train_split]
+formatted_data = [format_dataset_entry(entry, i) for i, entry in enumerate(train_split)]
 print("Formatting complete.")
 
 # Define the output file path
@@ -46,4 +47,3 @@ print(f"Successfully saved {len(formatted_data)} entries to {output_file}")
 print("\nFirst 3 formatted entries:")
 for i in range(min(3, len(formatted_data))):
     print(json.dumps(formatted_data[i], indent=2))
-
