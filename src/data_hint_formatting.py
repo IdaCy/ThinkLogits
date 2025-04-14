@@ -49,13 +49,6 @@ def format_data_with_hints(input_file, output_dir):
         correct_answer_option = item.get("correct")
         question_id = item.get("question_id") # Get question_id
 
-        # Skip item if 'correct' or 'question_id' is missing
-        if not correct_answer_option:
-            print(f"Warning: Skipping item due to missing or empty 'correct' field: {item.get('question_id', 'Unknown ID')}")
-            continue
-        if not question_id:
-            print(f"Warning: Skipping item due to missing 'question_id' field.")
-            continue
 
 
         for hint_type in hint_types:

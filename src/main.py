@@ -15,8 +15,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Define known chat templates (can be expanded)
 # Using the structure expected by tokenize_instructions: {instruction}
 KNOWN_CHAT_TEMPLATES = {
-    "llama3": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n{instruction}<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
-    "mistral": "<s>[INST] {instruction} [/INST]",
+    # "llama": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n{instruction}<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
+    # "qwen": "<|im_start|>user {instruction} <|im_end|><|im_start|>assistant",
     # Add other templates here based on model type identifier in model_name
     "default": "User: {instruction}\nAssistant:" # A generic fallback
 }
@@ -24,10 +24,10 @@ KNOWN_CHAT_TEMPLATES = {
 def get_chat_template(model_name: str) -> str:
     """Selects a chat template based on the model name."""
     model_name_lower = model_name.lower()
-    if "llama-3" in model_name_lower or "llama3" in model_name_lower:
+    if "llama" in model_name_lower or "llama" in model_name_lower:
         return KNOWN_CHAT_TEMPLATES["llama3"]
-    elif "mistral" in model_name_lower: # Assuming mistral instruct models
-        return KNOWN_CHAT_TEMPLATES["mistral"]
+    elif "qwen" in model_name_lower: # Assuming mistral instruct models
+        return KNOWN_CHAT_TEMPLATES["qwen"]
     # Add more specific checks if needed
     else:
         logging.warning(f"No specific chat template found for {model_name}. Using default.")
@@ -48,9 +48,9 @@ def load_data(data_path: str) -> List[Dict]:
         logging.error(f"An unexpected error occurred loading {data_path}: {e}")
         return []
 
-def save_results(results: List[Dict], hint_type: str):
+def save_results(results: List[Dict], hint_type: str, model_name:str):
     """Saves the results to a JSON file in the hint_type directory."""
-    output_path = os.path.join("data", hint_type, "completions.json")
+    output_path = os.path.join("data", hint_type, f"completions_{model_name}.json")
     try:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, 'w') as f:
@@ -59,8 +59,12 @@ def save_results(results: List[Dict], hint_type: str):
     except Exception as e:
         logging.error(f"Failed to save results to {output_path}: {e}")
 
+
 def generate_dataset_completions(
-    model_name: str,
+    model,
+    tokenizer,
+    model_name,
+    device,
     hint_types: List[str], # e.g., ["gsm_mc_urgency", "gsm_mc_psychophancy"]
     batch_size: int = 8,
     max_new_tokens: Optional[int] = 512,
@@ -77,12 +81,6 @@ def generate_dataset_completions(
     """
     start_time = time.time()
     
-    # --- 1. Load Model and Tokenizer --- 
-    try:
-        model, tokenizer, device = load_model_and_tokenizer(model_name)
-    except RuntimeError as e:
-        logging.error(f"Failed to initialize model: {e}. Aborting.")
-        return
         
     # --- 2. Select Chat Template --- 
     chat_template = get_chat_template(model_name)
@@ -92,11 +90,11 @@ def generate_dataset_completions(
     for hint_type in hint_types:
         logging.info(f"--- Processing dataset for hint type: {hint_type} ---")
         questions_data_path = os.path.join("data", "gsm_mc_stage_formatted.json")
-        hints_data_path = os.path.join("data", f"hint_type", "hints.json")
+        hints_data_path = os.path.join("data", f"{hint_type}", "hints.json")
         
         # Load questions and hints data
-        data = load_data(questions_data_path)
-        hints = load_data(hints_data_path)
+        data = load_data(questions_data_path)[:10]  # Only use the first 10 entries
+        hints = load_data(hints_data_path)[:10]
         
         # Create a dictionary mapping question_id to hint_text
         hint_dict = {hint["question_id"]: hint["hint_text"] for hint in hints}
@@ -119,25 +117,28 @@ def generate_dataset_completions(
             model, tokenizer, device, prompts, 
             chat_template, batch_size, max_new_tokens
         )
-        output_path_with_hints = os.path.join(output_base_dir, model_name.replace("/", "_"), f"{hint_type}_with_hints_completions.json")
-        save_results(results, output_path_with_hints)
+
+        save_results(results, hint_type, model_name)
         
 
     # --- 4. Cleanup --- 
-    logging.info("Cleaning up model and tokenizer...")
-    del model
-    del tokenizer
-    if device.type == 'cuda':
-        torch.cuda.empty_cache()
-        logging.info("CUDA cache cleared.")
+    # logging.info("Cleaning up model and tokenizer...")
+    # del model
+    # del tokenizer
+    # if device.type == 'cuda':
+    #     torch.cuda.empty_cache()
+    #     logging.info("CUDA cache cleared.")
         
     end_time = time.time()
     logging.info(f"Total processing time: {end_time - start_time:.2f} seconds")
 
+
+
 # Example of how to call the function (replace main() block)
 if __name__ == "__main__":
+    m
     generate_dataset_completions(
-        model_name="openai-community/gpt2",
+        model_name="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         hint_types=["induced_urgency"], 
         batch_size=4,
         max_new_tokens=1024

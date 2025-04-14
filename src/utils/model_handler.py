@@ -21,37 +21,28 @@ def get_device():
         logging.info("CUDA/MPS not available. Using CPU.")
         return torch.device("cpu")
 
-def load_model_and_tokenizer(model_name: str) -> Tuple[AutoModelForCausalLM, AutoTokenizer, torch.device]:
+def load_model_and_tokenizer(model_path: str) -> Tuple[AutoModelForCausalLM, AutoTokenizer, torch.device]:
     """
     Loads the Hugging Face model and tokenizer onto the appropriate device.
 
     Args:
         model_name: The name or path of the Hugging Face model to use.
-
     Returns:
         A tuple containing the loaded model, tokenizer, and the device.
-        
     Raises:
         RuntimeError: If model or tokenizer loading fails.
     """
     device = get_device()
     
-    logging.info(f"Loading model and tokenizer: {model_name} onto {device}")
+    logging.info(f"Loading model and tokenizer: {model_path} onto {device}")
     try:
-        # Potential optimization: Load model with quantization (e.g., 4-bit)
-        # bnb_config = BitsAndBytesConfig(
-        #     load_in_4bit=True,
-        #     bnb_4bit_use_double_quant=True,
-        #     bnb_4bit_quant_type="nf4",
-        #     bnb_4bit_compute_dtype=torch.bfloat16
-        # )
-        # model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, device_map="auto")
-        
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        model_name = model_path.split("/")[-1]
+        tokenizer = AutoTokenizer.from_pretrained(model_path)
         model = AutoModelForCausalLM.from_pretrained(
-            model_name, 
+            model_path, 
             torch_dtype=torch.bfloat16
         )
+        model.eval().cuda() # Explicitly move model to the determined device
         model.padding_side='left'
         tokenizer.padding_side='left'
         
@@ -61,11 +52,11 @@ def load_model_and_tokenizer(model_name: str) -> Tuple[AutoModelForCausalLM, Aut
             model.config.pad_token_id = model.config.eos_token_id
             
         logging.info("Model and tokenizer loaded successfully.")
-        return model, tokenizer, device
+        return model, tokenizer, model_name, device
 
     except Exception as e:
         logging.error(f"Error loading model or tokenizer: {e}")
-        raise RuntimeError(f"Failed to load model/tokenizer: {model_name}") from e
+        raise RuntimeError(f"Failed to load model/tokenizer: {model_path}") from e
 
 def tokenize_instructions(
     tokenizer: AutoTokenizer,
@@ -79,7 +70,7 @@ def tokenize_instructions(
         
     prompts = [chat_template.format(instruction=instruction) for instruction in instructions]
     # Return only input_ids as per the original function's signature intent
-    return tokenizer(prompts, padding=True, truncation=False, return_tensors="pt").input_ids
+    return tokenizer(prompts, padding=True, truncation=False, return_tensors="pt")
 
 def generate_completion(
     model: AutoModelForCausalLM,      
@@ -107,7 +98,7 @@ def generate_completion(
     """
     # Model and tokenizer are already loaded and on the correct device
     results = []
-    model.eval() # Set model to evaluation mode
+    # model.eval() # Set model to evaluation mode
 
     # Handle max_new_tokens=None case
     gen_max_tokens = max_new_tokens if max_new_tokens is not None else 2048 # Default large value
@@ -121,43 +112,36 @@ def generate_completion(
         current_batch_size = len(batch_prompt_texts)
         logging.info(f"Processing batch {i // batch_size + 1}/{(len(prompts) + batch_size - 1) // batch_size} (Size: {current_batch_size}, QIDs: {min(batch_question_ids)}-{max(batch_question_ids)})")
 
-        try:
-            input_ids = tokenize_instructions(
-                tokenizer,
-                batch_prompt_texts, 
-                chat_template
-            ).to(device)
+        encodings = tokenize_instructions(
+            tokenizer,
+            batch_prompt_texts, 
+            chat_template
+        )
+        
+        input_ids = encodings["input_ids"].to(model.device)
+        attention_mask = encodings["attention_mask"].to(model.device)
 
-            with torch.no_grad():
-                 outputs = model.generate(
-                    input_ids, 
-                    max_new_tokens=gen_max_tokens, # Use the determined value
-                    pad_token_id=tokenizer.pad_token_id, 
-                    eos_token_id=tokenizer.eos_token_id,
-                    do_sample=False
-                )
 
-            completions = tokenizer.batch_decode(outputs, skip_special_tokens=True)
-            
-            
-            # Store results for the batch
-            for qid, completion_text in zip(batch_question_ids, completions):
-                 results.append({
-                    "question_id": qid,
-                    "completion": completion_text # Already stripped
-                })
+        with torch.no_grad():
+            outputs = model.generate(
+                input_ids,
+                attention_mask=attention_mask,
+                max_new_tokens=gen_max_tokens, # Use the determined value
+                do_sample=False
+            )
 
-        except Exception as e:
-            logging.error(f"Error during generation for batch starting at index {i}: {e}", exc_info=True)
-            # Add error placeholders for this batch
-            for qid in batch_question_ids:
-                results.append({
-                    "question_id": qid,
-                    "completion": f"Error during generation: {e}"
-                })
+        completions = tokenizer.batch_decode(outputs, skip_special_tokens=True)
+        
+        
+        # Store results for the batch
+        for qid, completion_text in zip(batch_question_ids, completions):
+            results.append({
+                "question_id": qid,
+                "completion": completion_text # Already stripped
+            })
 
-        if device.type == 'cuda':
-            torch.cuda.empty_cache() 
+
+
         
     return results
 
