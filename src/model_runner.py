@@ -114,19 +114,20 @@ def generate_with_token_probabilities(
                 generated_tokens.append(token_str)
 
                 pA = pB = pC = pD = 0.0
-                for letter in ["A", "B", "C", "D"]:
+                for letter in [" A", " B", " C", " D"]:
                     letter_ids = tokenizer.encode(letter, add_special_tokens=False)
                     if len(letter_ids) == 1:
                         letter_id = letter_ids[0]
                         p_val = probs_i[letter_id].item()
-                        if letter == "A":
+                        if letter == "A" or letter == " A":
                             pA = p_val
-                        elif letter == "B":
+                        elif letter == "B" or letter == " B":
                             pB = p_val
-                        elif letter == "C":
+                        elif letter == "C" or letter == " C":
                             pC = p_val
-                        elif letter == "D":
+                        elif letter == "D" or letter == " D":
                             pD = p_val
+                logging.info("Generated tokens:", generated_tokens)
 
                 token_probabilities.append({
                     "token_index": t,
