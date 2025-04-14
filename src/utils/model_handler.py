@@ -127,7 +127,7 @@ def generate_completion(
                 input_ids,
                 attention_mask=attention_mask,
                 max_new_tokens=gen_max_tokens, # Use the determined value
-                do_sample=False
+                do_sample=True
             )
 
         completions = tokenizer.batch_decode(outputs, skip_special_tokens=True)

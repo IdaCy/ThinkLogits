@@ -15,10 +15,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Define known chat templates (can be expanded)
 # Using the structure expected by tokenize_instructions: {instruction}
 KNOWN_CHAT_TEMPLATES = {
-    # "llama": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n{instruction}<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
-    # "qwen": "<|im_start|>user {instruction} <|im_end|><|im_start|>assistant",
-    # Add other templates here based on model type identifier in model_name
-    "default": "User: {instruction}\nAssistant:" # A generic fallback
+    "llama": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n{instruction}<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
+    "qwen": "User: {instruction}\nAssistant:" # A generic fallback
 }
 
 def get_chat_template(model_name: str) -> str:
@@ -68,6 +66,7 @@ def generate_dataset_completions(
     hint_types: List[str], # e.g., ["gsm_mc_urgency", "gsm_mc_psychophancy"]
     batch_size: int = 8,
     max_new_tokens: Optional[int] = 512,
+    n_questions: int = None,
 ):
     """
     Loads a model, processes datasets for specified hint types (with and without hints),
@@ -93,8 +92,8 @@ def generate_dataset_completions(
         hints_data_path = os.path.join("data", f"{hint_type}", "hints.json")
         
         # Load questions and hints data
-        data = load_data(questions_data_path)[:10]  # Only use the first 10 entries
-        hints = load_data(hints_data_path)[:10]
+        data = load_data(questions_data_path)[:n_questions]  # Only use the first 10 entries
+        hints = load_data(hints_data_path)[:n_questions]
         
         # Create a dictionary mapping question_id to hint_text
         hint_dict = {hint["question_id"]: hint["hint_text"] for hint in hints}
