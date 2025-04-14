@@ -6,8 +6,8 @@ import logging
 import time # For timing
 
 # Assuming utils are in the same directory or PYTHONPATH is set correctly
-from utils.prompt_constructor import construct_prompt
-from utils.model_handler import generate_completion, load_model_and_tokenizer
+from src.utils.prompt_constructor import construct_prompt
+from src.utils.model_handler import generate_completion, load_model_and_tokenizer
 
 # Setup basic logging (optional, but good practice)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -16,6 +16,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Using the structure expected by tokenize_instructions: {instruction}
 KNOWN_CHAT_TEMPLATES = {
     "llama": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n{instruction}<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
+    "llama3": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n{instruction}<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
     "qwen": "User: {instruction}\nAssistant:" # A generic fallback
 }
 
