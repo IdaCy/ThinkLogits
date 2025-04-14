@@ -14,5 +14,29 @@
     "B": "8",
     "C": "12",
     "D": "25"
+  },
+  {
+    "task": "Calculate: 2 + 2 = ?",
+    "answer": "A",
+    "A": "4",
+    "B": "5",
+    "C": "2",
+    "D": "7"
+  },
+  {
+    "task": "What is the result if you add two by two, subtract one, and add one?",
+    "answer": "B",
+    "A": "3",
+    "B": "4",
+    "C": "5",
+    "D": "6"
+  },
+  {
+    "task": "What is the result if you add two by two, subtract one, and add two?",
+    "answer": "C",
+    "A": "3",
+    "B": "4",
+    "C": "5",
+    "D": "6"
   }
 ]
