@@ -14,7 +14,7 @@ class Verification(BaseModel):
 def read_in_completions(data_path: str):
     with open(data_path, 'r') as f:
             return json.load(f)
-    return completions[:10]
+    return completions
 
 
 def save_results(results: List[Dict], hint_type: str, model_name:str, n_questions: int):
