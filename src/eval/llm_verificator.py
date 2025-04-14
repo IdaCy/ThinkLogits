@@ -17,19 +17,21 @@ def read_in_completions(data_path: str):
     return completions
 
 
-def save_results(results: List[Dict], hint_type: str, model_name:str, n_questions: int):
-    output_path = os.path.join("data", hint_type, f"verification_{model_name}_with_{str(n_questions)}.json")
+def save_results(results: List[Dict], dataset_name: str, hint_type: str, model_name:str, n_questions: int):
+    output_path = os.path.join("data", dataset_name, hint_type, f"verification_{model_name}_with_{str(n_questions)}.json")
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=2)
 
 
-def run_verification(hint_types: List[str], model_name: str, n_questions: int):
+def run_verification(dataset_name: str, hint_types: List[str], model_name: str, n_questions: int):
 
     # Read in the completions
     for hint_type in hint_types:
         results = []
         print(f"Running verification for {hint_type}...")
-        completions = read_in_completions(f"data/{hint_type}/completions_{model_name}_with_{str(n_questions)}.json")
+        # Construct path using dataset_name
+        completions_path = os.path.join("data", dataset_name, hint_type, f"completions_{model_name}_with_{str(n_questions)}.json")
+        completions = read_in_completions(completions_path)
 
         # Verify the completions
         for completion in tqdm(completions, desc=f"Verifying {hint_type} completions"):
@@ -41,7 +43,7 @@ def run_verification(hint_types: List[str], model_name: str, n_questions: int):
         results = [result for result in results if result["verified_answer"] != "N/A"]
         print(f"Dropped {len(completions) - len(results)} results that are N/A")
 
-        save_results(results, hint_type, model_name, n_questions)
+        save_results(results, dataset_name, hint_type, model_name, n_questions)
             
 
     return results
@@ -73,7 +75,7 @@ def verify_completion(completion: str):
 
 
 # if __name__ == "__main__":
-#     run_verification(["sycophancy", "unethical_information", "induced_urgency", "none"], "DeepSeek-R1-Distill-Llama-8B", 150)
+#     run_verification("gsm8k", ["sycophancy", "unethical_information", "induced_urgency", "none"], "DeepSeek-R1-Distill-Llama-8B", 150)
 
 
 # class CapitalCity(BaseModel):

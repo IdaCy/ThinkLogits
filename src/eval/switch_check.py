@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from typing import List
+import os
 
 def load_json(file_path):
     """Loads JSON data from a file."""
@@ -57,10 +58,10 @@ def calculate_accuracy(answers, ground_truth):
     accuracy_percentage = (correct_count / total_comparable * 100)
     return correct_count, total_comparable, accuracy_percentage
 
-def run_switch_check(hint_types: List[str], model_name: str, n_questions: int):
+def run_switch_check(dataset_name: str, hint_types: List[str], model_name: str, n_questions: int):
     """Runs the analysis and saves results per hint type."""
-    DATA_DIR = Path("data")
-    GROUND_TRUTH_FILE = DATA_DIR / "gsm_mc_stage_formatted.json"
+    DATA_DIR = Path("data") / dataset_name
+    GROUND_TRUTH_FILE = DATA_DIR / "input_mcq_data.json"
     BASE_HINT_TYPE = "none"
 
     print("Loading ground truth...")
@@ -111,5 +112,14 @@ def run_switch_check(hint_types: List[str], model_name: str, n_questions: int):
         print(f"  Total Entries: {total_comparable}")
         print(f"  Switched Answers: {total_switched} ({switched_percentage:.2f}%)")
         print(f"  Switched to Correct Answer: {total_to_hint} ({to_hint_percentage:.2f}%)")
+
+# Example Usage (if run directly)
+# if __name__ == "__main__":
+#     run_switch_check(
+#         dataset_name="gsm8k",
+#         hint_types=["sycophancy", "induced_urgency", "unethical_information"], # Exclude 'none'
+#         model_name="DeepSeek-R1-Distill-Llama-8B",
+#         n_questions=150
+#     )
 
 
