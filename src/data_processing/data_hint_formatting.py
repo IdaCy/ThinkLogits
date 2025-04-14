@@ -9,13 +9,18 @@ script_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(script_dir)
 sys.path.append(parent_dir)
 
+# print current working directory
+print(os.getcwd())
+
 # Import hint templates
 try:
+    # Adjusted path assuming hint_templates.py is in the parent 'data' directory
     from data.hint_templates import hint_templates
 except ImportError:
     print("Error: Could not import hint_templates from data.hint_templates.py")
     print("Please ensure the file exists and the script is run from the correct directory or the path is configured.")
     sys.exit(1)
+
 
 def slugify(text):
     """Convert string to lowercase, replace spaces with underscores."""
@@ -49,8 +54,6 @@ def format_data_with_hints(input_file, output_dir):
         correct_answer_option = item.get("correct")
         question_id = item.get("question_id") # Get question_id
 
-
-
         for hint_type in hint_types:
             hint_text = None
             if hint_type != "None":
@@ -65,13 +68,16 @@ def format_data_with_hints(input_file, output_dir):
             }
             output_data[hint_type].append(hint_entry)
 
-    # Write output files into subdirectories
+    # Write output files directly into output_dir, skipping "None"
     for hint_type in hint_types:
-        hint_type_slug = slugify(hint_type)
-        hint_output_dir = os.path.join(output_dir, hint_type_slug)
-        os.makedirs(hint_output_dir, exist_ok=True) # Create subdirectory
+        if hint_type == "None": # Skip writing the file for "None" hint type
+            print(f"Skipping file generation for hint type: {hint_type}")
+            continue
 
-        output_path = os.path.join(hint_output_dir, "hints.json") # Filename is always hints.json
+        # Construct output path directly in the output_dir
+        # Using original hint_type string in filename for clarity
+        output_path = os.path.join(output_dir, f"hints_{hint_type}.json")
+
         try:
             with open(output_path, 'w') as f:
                 json.dump(output_data[hint_type], f, indent=2)
@@ -80,7 +86,12 @@ def format_data_with_hints(input_file, output_dir):
             print(f"Error writing file {output_path}: {e}")
 
 if __name__ == "__main__":
-    input_json_file = "data/gsm_mc_stage_formatted.json"
-    # Output directory remains the base directory where subdirectories will be created
-    output_directory = "data"
-    format_data_with_hints(input_json_file, output_directory)
+    # Output directory becomes the dataset-specific directory (e.g., "data/gsm8k")
+    # This would need to be passed dynamically, e.g., via argparse
+    # Example for gsm8k:
+    # dataset_name = "gsm8k"
+    # input_json_file = os.path.join("data", dataset_name, "input_mcq_data.json")
+    # output_directory = os.path.join("data", dataset_name)
+    # format_data_with_hints(input_json_file, output_directory)
+    # pass # Placeholder for actual execution logic
+    format_data_with_hints("data/gsm8k/input_mcq_data.json", "data/gsm8k")

@@ -23,20 +23,24 @@ def read_in_data(data_path: str):
     return completions
 
 
-def save_results(results: List[Dict], hint_type: str, model_name:str, n_questions: int):
-    output_path = os.path.join("data", hint_type, f"hint_verification_{model_name}_with_{str(n_questions)}.json")
+def save_results(results: List[Dict], dataset_name: str, hint_type: str, model_name:str, n_questions: int):
+    # Save to dataset/model/hint_type directory, remove model name from filename
+    output_path = os.path.join("data", dataset_name, model_name, hint_type, f"hint_verification_with_{str(n_questions)}.json")
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=2)
 
 
-def run_hint_verification(hint_types: List[str], model_name: str, n_questions: int):
+def run_hint_verification(dataset_name: str, hint_types: List[str], model_name: str, n_questions: int):
 
     # Read in the completions
     for hint_type in hint_types:
         results = []
         print(f"Running verification for {hint_type}...")
-        completions = read_in_data(f"data/{hint_type}/completions_{model_name}_with_{str(n_questions)}.json")
-        switch_analysis = read_in_data(f"data/{hint_type}/switch_analysis_{model_name}_with_{str(n_questions)}.json")
+        # Construct paths to read from dataset/model/hint_type directory
+        completions_path = os.path.join("data", dataset_name, model_name, hint_type, f"completions_with_{str(n_questions)}.json")
+        completions = read_in_data(completions_path)
+        switch_analysis_path = os.path.join("data", dataset_name, model_name, hint_type, f"switch_analysis_with_{n_questions}.json")
+        switch_analysis = read_in_data(switch_analysis_path)
 
         # Get question ids that are switched to hint
         switched_to_hint_ids = [result["question_id"] for result in switch_analysis if (result["switched"] and result["to_hint"])]
@@ -53,7 +57,7 @@ def run_hint_verification(hint_types: List[str], model_name: str, n_questions: i
             "verbalizes_hint": verification.verbalizes_hint})
         
 
-        save_results(results, hint_type, model_name, n_questions)
+        save_results(results, dataset_name, hint_type, model_name, n_questions)
             
 
 
@@ -93,7 +97,7 @@ def verify_completion(completion: str):
 
 
 # if __name__ == "__main__":
-#     run_hint_verification(["sycophancy"], "DeepSeek-R1-Distill-Llama-8B", 150)
+#     run_hint_verification("gsm8k", ["sycophancy"], "DeepSeek-R1-Distill-Llama-8B", 150)
 
 
 # class CapitalCity(BaseModel):
