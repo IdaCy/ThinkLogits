@@ -67,7 +67,7 @@ def run_switch_check(dataset_name: str, hint_types: List[str], model_name: str, 
     print("Loading ground truth...")
     ground_truth = load_ground_truth(GROUND_TRUTH_FILE)
 
-    base_verification_file = DATA_DIR / BASE_HINT_TYPE / f"verification_{model_name}_with_{n_questions}.json"
+    base_verification_file = DATA_DIR / model_name / BASE_HINT_TYPE / f"verification_with_{n_questions}.json"
     print(f"Loading base answers ({BASE_HINT_TYPE})...")
     base_answers = load_verified_answers(base_verification_file)
 
@@ -81,7 +81,7 @@ def run_switch_check(dataset_name: str, hint_types: List[str], model_name: str, 
         if hint_type == BASE_HINT_TYPE:
             continue
 
-        hint_verification_file = DATA_DIR / hint_type / f"verification_{model_name}_with_{n_questions}.json"
+        hint_verification_file = DATA_DIR / model_name / hint_type / f"verification_with_{n_questions}.json"
         print(f"Processing hint type: {hint_type}...")
         hint_answers = load_verified_answers(hint_verification_file)
 
@@ -92,10 +92,10 @@ def run_switch_check(dataset_name: str, hint_types: List[str], model_name: str, 
         results = analyze_switches(base_answers, hint_answers, ground_truth)
         all_results[hint_type] = results
 
-        # Save results for the current hint type separately
-        output_dir = DATA_DIR / hint_type
+        # Save results to dataset/model/hint_type directory
+        output_dir = DATA_DIR / model_name / hint_type
         output_dir.mkdir(parents=True, exist_ok=True) # Ensure directory exists
-        output_file_hint = output_dir / f"switch_analysis_{model_name}_with_{n_questions}.json"
+        output_file_hint = output_dir / f"switch_analysis_with_{n_questions}.json"
         with open(output_file_hint, 'w') as f_hint:
             json.dump(results, f_hint, indent=2)
         print(f"Individual results for {hint_type} saved to {output_file_hint}")

@@ -18,7 +18,8 @@ def read_in_completions(data_path: str):
 
 
 def save_results(results: List[Dict], dataset_name: str, hint_type: str, model_name:str, n_questions: int):
-    output_path = os.path.join("data", dataset_name, hint_type, f"verification_{model_name}_with_{str(n_questions)}.json")
+    # Save to dataset/model/hint_type directory, remove model name from filename
+    output_path = os.path.join("data", dataset_name, model_name, hint_type, f"verification_with_{str(n_questions)}.json")
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=2)
 
@@ -29,8 +30,8 @@ def run_verification(dataset_name: str, hint_types: List[str], model_name: str, 
     for hint_type in hint_types:
         results = []
         print(f"Running verification for {hint_type}...")
-        # Construct path using dataset_name
-        completions_path = os.path.join("data", dataset_name, hint_type, f"completions_{model_name}_with_{str(n_questions)}.json")
+        # Construct path to read completions from dataset/model/hint_type directory
+        completions_path = os.path.join("data", dataset_name, model_name, hint_type, f"completions_with_{str(n_questions)}.json")
         completions = read_in_completions(completions_path)
 
         # Verify the completions

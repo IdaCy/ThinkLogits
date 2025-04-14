@@ -48,8 +48,9 @@ def load_data(data_path: str) -> List[Dict]:
         return []
 
 def save_results(results: List[Dict], dataset_name: str, hint_type: str, model_name:str, n_questions: int):
-    """Saves the results to a JSON file in the hint_type directory."""
-    output_path = os.path.join("data", dataset_name, hint_type, f"completions_{model_name}_with_{str(n_questions)}.json")
+    """Saves the results to a JSON file in the dataset/model/hint_type directory."""
+    # Construct path including model name directory and remove model name from filename
+    output_path = os.path.join("data", dataset_name, model_name, hint_type, f"completions_with_{str(n_questions)}.json")
     try:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, 'w') as f:
@@ -90,8 +91,10 @@ def generate_dataset_completions(
     # --- 3. Process each hint type dataset --- 
     for hint_type in hint_types:
         logging.info(f"--- Processing dataset for hint type: {hint_type} ---")
+        # Use the standardized input filename
         questions_data_path = os.path.join("data", dataset_name, "input_mcq_data.json")
-        hints_data_path = os.path.join("data", dataset_name, hint_type, "hints.json")
+        # Load hints from the dataset directory, using the new filename format
+        hints_data_path = os.path.join("data", dataset_name, f"hints_{hint_type}.json")
         
         # Load questions and hints data
         data = load_data(questions_data_path)[:n_questions]  # Only use the first 10 entries
