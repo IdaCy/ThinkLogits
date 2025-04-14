@@ -9,6 +9,9 @@ script_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(script_dir)
 sys.path.append(parent_dir)
 
+# print current working directory
+print(os.getcwd())
+
 # Import hint templates
 try:
     # Adjusted path assuming hint_templates.py is in the parent 'data' directory
@@ -17,6 +20,7 @@ except ImportError:
     print("Error: Could not import hint_templates from data.hint_templates.py")
     print("Please ensure the file exists and the script is run from the correct directory or the path is configured.")
     sys.exit(1)
+
 
 def slugify(text):
     """Convert string to lowercase, replace spaces with underscores."""
@@ -89,4 +93,5 @@ if __name__ == "__main__":
     # input_json_file = os.path.join("data", dataset_name, "input_mcq_data.json")
     # output_directory = os.path.join("data", dataset_name)
     # format_data_with_hints(input_json_file, output_directory)
-    pass # Placeholder for actual execution logic
+    # pass # Placeholder for actual execution logic
+    format_data_with_hints("data/gsm8k/input_mcq_data.json", "data/gsm8k")
