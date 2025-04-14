@@ -46,9 +46,9 @@ def load_data(data_path: str) -> List[Dict]:
         logging.error(f"An unexpected error occurred loading {data_path}: {e}")
         return []
 
-def save_results(results: List[Dict], hint_type: str, model_name:str):
+def save_results(results: List[Dict], hint_type: str, model_name:str, n_questions: int):
     """Saves the results to a JSON file in the hint_type directory."""
-    output_path = os.path.join("data", hint_type, f"completions_{model_name}.json")
+    output_path = os.path.join("data", hint_type, f"completions_{model_name}_with_{str(n_questions)}.json")
     try:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, 'w') as f:
@@ -117,7 +117,7 @@ def generate_dataset_completions(
             chat_template, batch_size, max_new_tokens
         )
 
-        save_results(results, hint_type, model_name)
+        save_results(results, hint_type, model_name, n_questions)
         
 
     # --- 4. Cleanup --- 
@@ -135,7 +135,6 @@ def generate_dataset_completions(
 
 # Example of how to call the function (replace main() block)
 if __name__ == "__main__":
-    m
     generate_dataset_completions(
         model_name="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         hint_types=["induced_urgency"], 
