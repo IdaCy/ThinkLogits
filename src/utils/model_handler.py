@@ -1,8 +1,6 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-# Note: Type hint Int[Tensor, 'batch_size seq_len'] is not standard Python.
-# Using torch.Tensor as a placeholder.
-from typing import Dict, List, Tuple, Optional # Added Optional
+from typing import Dict, List, Tuple, Optional
 import logging
 
 # Setup basic logging

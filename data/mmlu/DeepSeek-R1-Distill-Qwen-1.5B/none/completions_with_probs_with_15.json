@@ -1,0 +1,2507 @@
+[
+  {
+    "question_id": 0,
+    "prompt_text": "Suppose there is a correlation of r = 0.9 between number of hours per day students study and GPAs. Which of the following is a reasonable conclusion?\n\n[ A ] 90% of students who study receive high grades.\n[ B ] 90% of students who receive high grades study a lot.\n[ C ] 90% of the variation in GPAs can be explained by variation in number of study hours per day.\n[ D ] 81% of the variation in GPAs can be explained by variation in number of study hours per day.\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: Suppose there is a correlation of r = 0.9 between number of hours per day students study and GPAs. Which of the following is a reasonable conclusion?\n\n[ A ] 90% of students who study receive high grades.\n[ B ] 90% of students who receive high grades study a lot.\n[ C ] 90% of the variation in GPAs can be explained by variation in number of study hours per day.\n[ D ] 81% of the variation in GPAs can be explained by variation in number of study hours per day.\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: To determine the correct conclusion, I need to understand the meaning of the correlation coefficient (r) and",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": " To",
+        "A_prob": 3.4225543288357585e-08,
+        "B_prob": 1.9689558872215684e-09,
+        "C_prob": 5.3836299862553005e-09,
+        "D_prob": 9.691540903133955e-09
+      },
+      {
+        "step_idx": 1,
+        "generated_token": " determine",
+        "A_prob": 3.5490899108481244e-10,
+        "B_prob": 3.7194144986152367e-10,
+        "C_prob": 4.0531880629579575e-10,
+        "D_prob": 1.313898110311129e-07
+      },
+      {
+        "step_idx": 2,
+        "generated_token": " the",
+        "A_prob": 2.274046950745401e-09,
+        "B_prob": 7.737055995882258e-10,
+        "C_prob": 1.716540909413311e-09,
+        "D_prob": 3.3828665563229166e-11
+      },
+      {
+        "step_idx": 3,
+        "generated_token": " correct",
+        "A_prob": 7.187574979639066e-10,
+        "B_prob": 4.713726631244697e-10,
+        "C_prob": 1.9045176546939047e-10,
+        "D_prob": 2.847023398283577e-12
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " conclusion",
+        "A_prob": 7.427757853228911e-10,
+        "B_prob": 3.853470043058138e-10,
+        "C_prob": 1.0170871783676816e-10,
+        "D_prob": 1.3818651951880145e-11
+      },
+      {
+        "step_idx": 5,
+        "generated_token": ",",
+        "A_prob": 4.125108699071234e-09,
+        "B_prob": 1.9679792018223452e-08,
+        "C_prob": 6.131426477651303e-10,
+        "D_prob": 9.204361162140628e-10
+      },
+      {
+        "step_idx": 6,
+        "generated_token": " I",
+        "A_prob": 8.17675701453302e-12,
+        "B_prob": 5.826569261790926e-12,
+        "C_prob": 2.1046984988171147e-10,
+        "D_prob": 1.5791925059294165e-11
+      },
+      {
+        "step_idx": 7,
+        "generated_token": " need",
+        "A_prob": 1.1367252972238617e-10,
+        "B_prob": 3.867513254096622e-11,
+        "C_prob": 3.1141741962947833e-10,
+        "D_prob": 3.7271788433379527e-10
+      },
+      {
+        "step_idx": 8,
+        "generated_token": " to",
+        "A_prob": 2.2540209282384538e-11,
+        "B_prob": 5.9959372536444455e-12,
+        "C_prob": 4.17829520982238e-11,
+        "D_prob": 8.776614851546682e-11
+      },
+      {
+        "step_idx": 9,
+        "generated_token": " understand",
+        "A_prob": 2.040308200168539e-11,
+        "B_prob": 1.6203335548303777e-11,
+        "C_prob": 5.302503575110862e-11,
+        "D_prob": 1.0607257433514761e-10
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " the",
+        "A_prob": 5.7877855286214697e-11,
+        "B_prob": 4.9072350349899096e-11,
+        "C_prob": 5.3419334927751194e-11,
+        "D_prob": 2.283190650431699e-11
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " meaning",
+        "A_prob": 1.0827871238516806e-10,
+        "B_prob": 8.472765891665013e-12,
+        "C_prob": 2.4516763619253368e-11,
+        "D_prob": 7.959427388015694e-12
+      },
+      {
+        "step_idx": 12,
+        "generated_token": " of",
+        "A_prob": 3.603282602848701e-11,
+        "B_prob": 5.796661328022479e-12,
+        "C_prob": 2.4003037404907168e-11,
+        "D_prob": 2.438103191559904e-11
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " the",
+        "A_prob": 2.8669094875866108e-11,
+        "B_prob": 8.675535984048466e-12,
+        "C_prob": 1.6208036648923674e-11,
+        "D_prob": 4.2612805645214635e-12
+      },
+      {
+        "step_idx": 14,
+        "generated_token": " correlation",
+        "A_prob": 4.284375285101838e-11,
+        "B_prob": 9.634712298811632e-12,
+        "C_prob": 1.8532389164938046e-12,
+        "D_prob": 6.111333227670768e-13
+      },
+      {
+        "step_idx": 15,
+        "generated_token": " coefficient",
+        "A_prob": 1.3398033767500483e-12,
+        "B_prob": 1.2685003871956702e-12,
+        "C_prob": 2.8363639562045684e-12,
+        "D_prob": 7.045439806650095e-14
+      },
+      {
+        "step_idx": 16,
+        "generated_token": " (",
+        "A_prob": 1.0737231936897018e-10,
+        "B_prob": 7.117698791470062e-11,
+        "C_prob": 9.690812041718289e-11,
+        "D_prob": 4.805961184572993e-12
+      },
+      {
+        "step_idx": 17,
+        "generated_token": "r",
+        "A_prob": 2.2831933677025518e-08,
+        "B_prob": 1.045322139958671e-08,
+        "C_prob": 7.87863609730266e-06,
+        "D_prob": 1.3848267421678884e-08
+      },
+      {
+        "step_idx": 18,
+        "generated_token": ")",
+        "A_prob": 1.0424173524370417e-08,
+        "B_prob": 8.916269500502949e-09,
+        "C_prob": 3.081380040015347e-09,
+        "D_prob": 2.3491239176109957e-08
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " and",
+        "A_prob": 3.178785012991625e-09,
+        "B_prob": 3.7965169896736484e-10,
+        "C_prob": 1.169409569179436e-09,
+        "D_prob": 1.3857917591231228e-10
+      }
+    ]
+  },
+  {
+    "question_id": 1,
+    "prompt_text": "What condition is caused by malfunctioning sebaceous glands?\n\n[ A ] bad breath\n[ B ] shingles\n[ C ] acne\n[ D ] carpal tunnel syndrome\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: What condition is caused by malfunctioning sebaceous glands?\n\n[ A ] bad breath\n[ B ] shingles\n[ C ] acne\n[ D ] carpal tunnel syndrome\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: The sebaceous glands are responsible for producing sebum, which is the white substance that coats the",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": "",
+        "A_prob": 3.505779833101741e-10,
+        "B_prob": 6.057443990847844e-10,
+        "C_prob": 2.447428926188877e-10,
+        "D_prob": 7.538611401791684e-10
+      },
+      {
+        "step_idx": 1,
+        "generated_token": "",
+        "A_prob": 1.4071638965162947e-08,
+        "B_prob": 7.133288590921438e-07,
+        "C_prob": 4.4719573821794256e-08,
+        "D_prob": 5.107136047399763e-08
+      },
+      {
+        "step_idx": 2,
+        "generated_token": "",
+        "A_prob": 5.21467146807203e-13,
+        "B_prob": 2.8428317477846576e-08,
+        "C_prob": 2.6899322613099796e-12,
+        "D_prob": 4.647786495948214e-12
+      },
+      {
+        "step_idx": 3,
+        "generated_token": "",
+        "A_prob": 1.0957586227267058e-10,
+        "B_prob": 5.025805726449617e-12,
+        "C_prob": 3.853994207103639e-11,
+        "D_prob": 8.333602904975201e-13
+      },
+      {
+        "step_idx": 4,
+        "generated_token": "",
+        "A_prob": 5.6479088766936414e-11,
+        "B_prob": 5.872895919578625e-11,
+        "C_prob": 1.4733450570680873e-11,
+        "D_prob": 2.5858013646962164e-11
+      },
+      {
+        "step_idx": 5,
+        "generated_token": "",
+        "A_prob": 1.2713729624636017e-08,
+        "B_prob": 6.885386483190814e-09,
+        "C_prob": 1.0848111742234323e-08,
+        "D_prob": 3.614737664747736e-08
+      },
+      {
+        "step_idx": 6,
+        "generated_token": "",
+        "A_prob": 9.920609223001975e-09,
+        "B_prob": 2.6600833535894708e-08,
+        "C_prob": 1.8606680640687046e-08,
+        "D_prob": 6.739898594787519e-08
+      },
+      {
+        "step_idx": 7,
+        "generated_token": "",
+        "A_prob": 7.822638092847001e-10,
+        "B_prob": 4.819387666721298e-10,
+        "C_prob": 2.3857701925145136e-10,
+        "D_prob": 1.156111095745871e-09
+      },
+      {
+        "step_idx": 8,
+        "generated_token": "",
+        "A_prob": 6.852454603745173e-09,
+        "B_prob": 5.378553158408295e-09,
+        "C_prob": 1.1036074276660202e-08,
+        "D_prob": 3.1372822117958776e-09
+      },
+      {
+        "step_idx": 9,
+        "generated_token": "",
+        "A_prob": 1.5839478351153957e-07,
+        "B_prob": 5.8727202656427835e-08,
+        "C_prob": 3.732928277599967e-08,
+        "D_prob": 1.998092713506594e-08
+      },
+      {
+        "step_idx": 10,
+        "generated_token": "",
+        "A_prob": 7.688503722569351e-10,
+        "B_prob": 1.1345780421834206e-06,
+        "C_prob": 2.993718162258574e-09,
+        "D_prob": 2.3085074130069216e-10
+      },
+      {
+        "step_idx": 11,
+        "generated_token": "",
+        "A_prob": 5.284440662833845e-10,
+        "B_prob": 2.9122163014427827e-11,
+        "C_prob": 5.116092272050565e-11,
+        "D_prob": 7.40761271766921e-11
+      },
+      {
+        "step_idx": 12,
+        "generated_token": "",
+        "A_prob": 2.7164597238282795e-09,
+        "B_prob": 3.681717430925602e-10,
+        "C_prob": 1.235816449174365e-09,
+        "D_prob": 5.83758319461225e-10
+      },
+      {
+        "step_idx": 13,
+        "generated_token": "",
+        "A_prob": 2.8229405479862635e-09,
+        "B_prob": 2.9925584232870506e-09,
+        "C_prob": 8.492231131640438e-07,
+        "D_prob": 3.560360894994119e-08
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "",
+        "A_prob": 8.460163769541396e-08,
+        "B_prob": 4.423498722871955e-08,
+        "C_prob": 1.8442639770910318e-07,
+        "D_prob": 3.233624852327921e-07
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "",
+        "A_prob": 1.2162033158347185e-08,
+        "B_prob": 1.484535658846653e-07,
+        "C_prob": 5.701932082047279e-07,
+        "D_prob": 4.244967044542136e-08
+      },
+      {
+        "step_idx": 16,
+        "generated_token": "User",
+        "A_prob": 1.8730643702724592e-08,
+        "B_prob": 1.4848345131213136e-07,
+        "C_prob": 9.384442023474548e-07,
+        "D_prob": 2.023590752742166e-07
+      },
+      {
+        "step_idx": 17,
+        "generated_token": ":",
+        "A_prob": 6.941306196495134e-09,
+        "B_prob": 3.931930780964876e-09,
+        "C_prob": 3.463663134084527e-08,
+        "D_prob": 1.0707392750219924e-09
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " What",
+        "A_prob": 3.4112941360575633e-09,
+        "B_prob": 1.1918220188533724e-08,
+        "C_prob": 1.0388210966993938e-06,
+        "D_prob": 1.450519135914874e-07
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " condition",
+        "A_prob": 9.651692778334109e-10,
+        "B_prob": 3.930221426085012e-10,
+        "C_prob": 1.6546850556409254e-09,
+        "D_prob": 7.007423530325241e-09
+      }
+    ]
+  },
+  {
+    "question_id": 2,
+    "prompt_text": "Which of the following organs removes bilirubin from the blood, manufactures plasma proteins, and is involved with the production of prothrombin and fibrinogen?\n\n[ A ] Gallbladder\n[ B ] Kidney\n[ C ] Liver\n[ D ] Spleen\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: Which of the following organs removes bilirubin from the blood, manufactures plasma proteins, and is involved with the production of prothrombin and fibrinogen?\n\n[ A ] Gallbladder\n[ B ] Kidney\n[ C ] Liver\n[ D ] Spleen\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: To determine the correct answer, I'll analyze each organ's functions.\n\n1. **Gallbl",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": "th",
+        "A_prob": 2.8414229302775595e-10,
+        "B_prob": 5.608544029200857e-08,
+        "C_prob": 2.8414229302775595e-10,
+        "D_prob": 5.39207345440218e-10
+      },
+      {
+        "step_idx": 1,
+        "generated_token": "rom",
+        "A_prob": 9.063247374818673e-11,
+        "B_prob": 9.002846246275453e-10,
+        "C_prob": 5.678024161959172e-10,
+        "D_prob": 1.0085720703045808e-07
+      },
+      {
+        "step_idx": 2,
+        "generated_token": "bin",
+        "A_prob": 2.739666653261974e-11,
+        "B_prob": 3.6799802094478196e-10,
+        "C_prob": 6.927995677141752e-11,
+        "D_prob": 6.43871136962737e-11
+      },
+      {
+        "step_idx": 3,
+        "generated_token": " and",
+        "A_prob": 5.3405791074212505e-12,
+        "B_prob": 3.277897051012779e-11,
+        "C_prob": 6.911222896061053e-12,
+        "D_prob": 1.2224707357511022e-11
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " fibr",
+        "A_prob": 9.156379821018135e-11,
+        "B_prob": 1.928963794251004e-10,
+        "C_prob": 2.5801544928372167e-11,
+        "D_prob": 6.486507858616264e-11
+      },
+      {
+        "step_idx": 5,
+        "generated_token": "in",
+        "A_prob": 1.7342394187380705e-09,
+        "B_prob": 2.4984089797008835e-10,
+        "C_prob": 7.923251638120021e-11,
+        "D_prob": 1.9457628563923635e-10
+      },
+      {
+        "step_idx": 6,
+        "generated_token": "ogen",
+        "A_prob": 1.4547161218680937e-12,
+        "B_prob": 1.432162873536702e-12,
+        "C_prob": 3.0146257018470735e-11,
+        "D_prob": 1.4433954248840863e-12
+      },
+      {
+        "step_idx": 7,
+        "generated_token": "?\n\n",
+        "A_prob": 1.95461320739998e-11,
+        "B_prob": 1.1901729601859756e-11,
+        "C_prob": 1.7084321457527807e-10,
+        "D_prob": 6.103512140143152e-11
+      },
+      {
+        "step_idx": 8,
+        "generated_token": "[",
+        "A_prob": 8.889837650738475e-12,
+        "B_prob": 1.0073506265251275e-11,
+        "C_prob": 1.291132617486923e-10,
+        "D_prob": 8.959562258770148e-12
+      },
+      {
+        "step_idx": 9,
+        "generated_token": " A",
+        "A_prob": 7.370860866107165e-12,
+        "B_prob": 1.4804769910004012e-10,
+        "C_prob": 1.6162451585421955e-11,
+        "D_prob": 4.8064052737828433e-11
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " ]",
+        "A_prob": 9.649788745846877e-10,
+        "B_prob": 4.9005670632595866e-09,
+        "C_prob": 1.0742508271821549e-10,
+        "D_prob": 1.4120760116753672e-10
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " Gall",
+        "A_prob": 1.3538937748691637e-09,
+        "B_prob": 9.751731644414008e-10,
+        "C_prob": 6.395342033727047e-10,
+        "D_prob": 2.7318636242057437e-10
+      },
+      {
+        "step_idx": 12,
+        "generated_token": "bl",
+        "A_prob": 3.3799452126004326e-10,
+        "B_prob": 1.0072467304667043e-08,
+        "C_prob": 6.767930660345201e-10,
+        "D_prob": 6.420275422414079e-10
+      },
+      {
+        "step_idx": 13,
+        "generated_token": "adder",
+        "A_prob": 1.6268870972613314e-10,
+        "B_prob": 5.333561023390665e-11,
+        "C_prob": 9.983884552422495e-11,
+        "D_prob": 3.6585467294569796e-11
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "\n",
+        "A_prob": 0.005847132299095392,
+        "B_prob": 0.03160930052399635,
+        "C_prob": 0.0002267179370392114,
+        "D_prob": 0.00011400094081182033
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "[",
+        "A_prob": 1.0599727762183875e-09,
+        "B_prob": 3.690997230076931e-10,
+        "C_prob": 4.919713525453062e-10,
+        "D_prob": 1.5665381214446938e-09
+      },
+      {
+        "step_idx": 16,
+        "generated_token": " B",
+        "A_prob": 1.6426133023217382e-11,
+        "B_prob": 3.004025916908404e-10,
+        "C_prob": 5.3859212229001585e-11,
+        "D_prob": 6.103048622030371e-11
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " ]",
+        "A_prob": 1.6500582205480896e-05,
+        "B_prob": 0.0021611498668789864,
+        "C_prob": 0.001086694304831326,
+        "D_prob": 0.0001381576876156032
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " Kid",
+        "A_prob": 2.8854549305457056e-10,
+        "B_prob": 1.4996569958070083e-11,
+        "C_prob": 1.4028860538528587e-13,
+        "D_prob": 2.5364776945480116e-10
+      },
+      {
+        "step_idx": 19,
+        "generated_token": "ney",
+        "A_prob": 1.3346154990008584e-15,
+        "B_prob": 1.1243624304171917e-12,
+        "C_prob": 1.2272896694959842e-14,
+        "D_prob": 7.21486316735331e-15
+      }
+    ]
+  },
+  {
+    "question_id": 3,
+    "prompt_text": "Statement 1 | If a group has an element of order 15 it must have at least 8 elements of order 15. Statement 2 | If a group has more than 8 elements of order 15, it must have at least 16 elements of order 15.\n\n[ A ] True, True\n[ B ] False, False\n[ C ] True, False\n[ D ] False, True\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: Statement 1 | If a group has an element of order 15 it must have at least 8 elements of order 15. Statement 2 | If a group has more than 8 elements of order 15, it must have at least 16 elements of order 15.\n\n[ A ] True, True\n[ B ] False, False\n[ C ] True, False\n[ D ] False, True\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: To determine the truth of the statements, we analyze the group theory concepts related to elements of a given",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": "\n\n",
+        "A_prob": 3.3494476636697357e-10,
+        "B_prob": 1.9084576974304213e-10,
+        "C_prob": 8.737556511650979e-11,
+        "D_prob": 5.787326173845031e-10
+      },
+      {
+        "step_idx": 1,
+        "generated_token": "Please",
+        "A_prob": 2.134200594028357e-10,
+        "B_prob": 3.383902325015953e-10,
+        "C_prob": 4.113779039638388e-10,
+        "D_prob": 8.345078583715804e-08
+      },
+      {
+        "step_idx": 2,
+        "generated_token": " answer",
+        "A_prob": 6.62903482107069e-11,
+        "B_prob": 9.720836635640495e-11,
+        "C_prob": 1.2192660769905217e-10,
+        "D_prob": 1.1015150597204482e-10
+      },
+      {
+        "step_idx": 3,
+        "generated_token": " with",
+        "A_prob": 3.243647711537179e-11,
+        "B_prob": 1.3261983178303183e-10,
+        "C_prob": 7.556450604129239e-11,
+        "D_prob": 3.1072238532159346e-11
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " the",
+        "A_prob": 8.026766806779051e-09,
+        "B_prob": 2.33592234444302e-09,
+        "C_prob": 3.4992703179526075e-10,
+        "D_prob": 2.097687579194485e-10
+      },
+      {
+        "step_idx": 5,
+        "generated_token": " letter",
+        "A_prob": 1.2078155316175287e-12,
+        "B_prob": 1.145943583080733e-11,
+        "C_prob": 6.632212140589289e-12,
+        "D_prob": 4.558248743735671e-12
+      },
+      {
+        "step_idx": 6,
+        "generated_token": " of",
+        "A_prob": 3.323385316944538e-11,
+        "B_prob": 7.035606819361107e-11,
+        "C_prob": 2.494339179648364e-10,
+        "D_prob": 3.196068409927477e-11
+      },
+      {
+        "step_idx": 7,
+        "generated_token": " the",
+        "A_prob": 4.602169312306614e-08,
+        "B_prob": 1.2852943154229024e-09,
+        "C_prob": 2.2864728166371862e-10,
+        "D_prob": 5.793275859033997e-10
+      },
+      {
+        "step_idx": 8,
+        "generated_token": " correct",
+        "A_prob": 2.7432715387493145e-12,
+        "B_prob": 8.189895810140069e-12,
+        "C_prob": 1.5819660859062168e-10,
+        "D_prob": 1.667379949388259e-11
+      },
+      {
+        "step_idx": 9,
+        "generated_token": " option",
+        "A_prob": 4.509390916229705e-10,
+        "B_prob": 1.164913165929704e-10,
+        "C_prob": 2.509853991305988e-10,
+        "D_prob": 1.9546762819455665e-10
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " (",
+        "A_prob": 2.2878006780691074e-11,
+        "B_prob": 4.4531267562319954e-11,
+        "C_prob": 1.654537340467499e-10,
+        "D_prob": 1.2104854618666394e-10
+      },
+      {
+        "step_idx": 11,
+        "generated_token": "eg",
+        "A_prob": 2.3495019818575713e-10,
+        "B_prob": 7.808602375813933e-11,
+        "C_prob": 1.26024457536289e-09,
+        "D_prob": 8.26488544269921e-10
+      },
+      {
+        "step_idx": 12,
+        "generated_token": " [",
+        "A_prob": 2.8038494193083352e-08,
+        "B_prob": 1.1482808037754921e-09,
+        "C_prob": 1.2964868290055165e-07,
+        "D_prob": 3.177177632096573e-08
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " A",
+        "A_prob": 1.5372359385423806e-08,
+        "B_prob": 6.546341246860266e-10,
+        "C_prob": 2.320879266548559e-09,
+        "D_prob": 6.546341246860266e-10
+      },
+      {
+        "step_idx": 14,
+        "generated_token": " ],",
+        "A_prob": 1.7840570132321432e-09,
+        "B_prob": 1.5711182355104825e-10,
+        "C_prob": 6.069948432774197e-10,
+        "D_prob": 3.37843475417543e-10
+      },
+      {
+        "step_idx": 15,
+        "generated_token": " [",
+        "A_prob": 3.894642941482118e-11,
+        "B_prob": 2.777529942155077e-12,
+        "C_prob": 5.079571832600216e-11,
+        "D_prob": 3.546112709029714e-11
+      },
+      {
+        "step_idx": 16,
+        "generated_token": " B",
+        "A_prob": 5.571807251691929e-11,
+        "B_prob": 4.314620605239128e-10,
+        "C_prob": 2.0908050846202286e-09,
+        "D_prob": 4.566738542877147e-09
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " ],",
+        "A_prob": 3.157644146156713e-10,
+        "B_prob": 3.9748872596168106e-12,
+        "C_prob": 3.35423563924131e-11,
+        "D_prob": 5.705746292106184e-11
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " [",
+        "A_prob": 1.065304025549274e-10,
+        "B_prob": 1.002567300012469e-11,
+        "C_prob": 2.2376980823857195e-10,
+        "D_prob": 1.4228496852952688e-11
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " C",
+        "A_prob": 3.3681714101813087e-12,
+        "B_prob": 2.989422403197606e-13,
+        "C_prob": 3.2970723373715316e-11,
+        "D_prob": 8.466317924504807e-13
+      }
+    ]
+  },
+  {
+    "question_id": 4,
+    "prompt_text": "What is the supplement of a 40\u00b0 angle?\n\n[ A ] 50\u00b0\n[ B ] 130\u00b0\n[ C ] 140\u00b0\n[ D ] 220\u00b0\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: What is the supplement of a 40\u00b0 angle?\n\n[ A ] 50\u00b0\n[ B ] 130\u00b0\n[ C ] 140\u00b0\n[ D ] 220\u00b0\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: To find the supplement of a 40\u00b0 angle, I need to recall that supplementary angles add",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": " the",
+        "A_prob": 1.4143555659984486e-08,
+        "B_prob": 6.91896373528067e-10,
+        "C_prob": 2.8395372164702337e-10,
+        "D_prob": 1.2725921427758635e-09
+      },
+      {
+        "step_idx": 1,
+        "generated_token": " supplement",
+        "A_prob": 4.763442071342716e-11,
+        "B_prob": 1.4874412812559967e-10,
+        "C_prob": 1.430458251849842e-10,
+        "D_prob": 4.020262789339313e-09
+      },
+      {
+        "step_idx": 2,
+        "generated_token": " of",
+        "A_prob": 9.107095286231548e-12,
+        "B_prob": 2.5741801051859525e-11,
+        "C_prob": 5.512954242420376e-12,
+        "D_prob": 1.064727212646277e-11
+      },
+      {
+        "step_idx": 3,
+        "generated_token": " a",
+        "A_prob": 3.42068333294282e-13,
+        "B_prob": 7.114342887590622e-14,
+        "C_prob": 2.637747672736869e-14,
+        "D_prob": 1.8704432263021847e-14
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " ",
+        "A_prob": 1.2842935916135279e-11,
+        "B_prob": 1.1810144529000866e-10,
+        "C_prob": 1.2943665236853086e-11,
+        "D_prob": 9.544059986765774e-12
+      },
+      {
+        "step_idx": 5,
+        "generated_token": "4",
+        "A_prob": 1.002084942802739e-10,
+        "B_prob": 3.3691981496386525e-12,
+        "C_prob": 2.1389799653714903e-12,
+        "D_prob": 1.6825977460291353e-12
+      },
+      {
+        "step_idx": 6,
+        "generated_token": "0",
+        "A_prob": 6.7557834326770205e-12,
+        "B_prob": 1.8469282093286354e-12,
+        "C_prob": 2.262904056846149e-12,
+        "D_prob": 1.3941346991772074e-12
+      },
+      {
+        "step_idx": 7,
+        "generated_token": "\u00b0",
+        "A_prob": 1.748221386448437e-13,
+        "B_prob": 6.846133631787515e-14,
+        "C_prob": 3.165619892955829e-13,
+        "D_prob": 9.41395073873752e-13
+      },
+      {
+        "step_idx": 8,
+        "generated_token": " angle",
+        "A_prob": 3.437290729824127e-11,
+        "B_prob": 2.7619406761658638e-11,
+        "C_prob": 6.032632726693521e-11,
+        "D_prob": 1.4026292627367098e-10
+      },
+      {
+        "step_idx": 9,
+        "generated_token": "?\n\n",
+        "A_prob": 2.9028524375918074e-11,
+        "B_prob": 2.445640565063023e-11,
+        "C_prob": 1.7401566299035665e-11,
+        "D_prob": 2.6177821021988734e-10
+      },
+      {
+        "step_idx": 10,
+        "generated_token": "[",
+        "A_prob": 1.3806873699895306e-10,
+        "B_prob": 7.99080523972151e-11,
+        "C_prob": 2.703254564639934e-10,
+        "D_prob": 2.703254564639934e-10
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " A",
+        "A_prob": 1.7034107457902792e-09,
+        "B_prob": 1.099804691762074e-09,
+        "C_prob": 6.882401870633714e-10,
+        "D_prob": 4.3747205857869176e-10
+      },
+      {
+        "step_idx": 12,
+        "generated_token": " ]",
+        "A_prob": 9.752414847907787e-11,
+        "B_prob": 1.6460316443200895e-10,
+        "C_prob": 1.4987287799694826e-10,
+        "D_prob": 8.707926046902514e-11
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " ",
+        "A_prob": 1.7620302439347313e-10,
+        "B_prob": 4.036665793294425e-11,
+        "C_prob": 1.7620302439347313e-10,
+        "D_prob": 2.750490391001392e-10
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "5",
+        "A_prob": 4.344769335973275e-11,
+        "B_prob": 7.789742809127809e-12,
+        "C_prob": 6.942921931818447e-11,
+        "D_prob": 1.447029163159641e-10
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "0",
+        "A_prob": 9.066798978274448e-10,
+        "B_prob": 5.414032555606241e-10,
+        "C_prob": 5.414032555606241e-10,
+        "D_prob": 3.2144593653526954e-09
+      },
+      {
+        "step_idx": 16,
+        "generated_token": "\u00b0",
+        "A_prob": 3.3263908988390156e-11,
+        "B_prob": 2.0816022516800814e-11,
+        "C_prob": 1.4362622202668263e-11,
+        "D_prob": 2.268401612381954e-11
+      },
+      {
+        "step_idx": 17,
+        "generated_token": "\n",
+        "A_prob": 8.247965088692411e-10,
+        "B_prob": 7.823115766303346e-11,
+        "C_prob": 5.139787467162149e-12,
+        "D_prob": 7.221081371744376e-11
+      },
+      {
+        "step_idx": 18,
+        "generated_token": "[",
+        "A_prob": 6.246442165597221e-13,
+        "B_prob": 8.146896243559076e-13,
+        "C_prob": 2.0358599517582981e-13,
+        "D_prob": 1.1487249411239187e-13
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " B",
+        "A_prob": 1.0295340968635713e-10,
+        "B_prob": 1.4800694307301465e-12,
+        "C_prob": 8.882483290562071e-12,
+        "D_prob": 4.693772497413318e-13
+      }
+    ]
+  },
+  {
+    "question_id": 5,
+    "prompt_text": "The appeal to joy fallacy involves\n\n[ A ] arguing that someone should do something based only on the assertion that it will make him or her feel happier\n[ B ] causing confusion during refutation because of a lack of ability to engage in refutation\n[ C ] arguing for a conclusion based only on feeling sorry for someone when that feeling is irrelevant to the conclusion\n[ D ] arguing someone should do something only because other people will like him or her for doing it\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: The appeal to joy fallacy involves\n\n[ A ] arguing that someone should do something based only on the assertion that it will make him or her feel happier\n[ B ] causing confusion during refutation because of a lack of ability to engage in refutation\n[ C ] arguing for a conclusion based only on feeling sorry for someone when that feeling is irrelevant to the conclusion\n[ D ] arguing someone should do something only because other people will like him or her for doing it\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: The appeal to joy fallacy is a logical fallacy where someone argues for an action based solely on",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": "[",
+        "A_prob": 7.352669584292926e-09,
+        "B_prob": 3.1902605002187556e-09,
+        "C_prob": 4.742606307672759e-09,
+        "D_prob": 6.738957392116163e-09
+      },
+      {
+        "step_idx": 1,
+        "generated_token": " D",
+        "A_prob": 2.2864559134916362e-09,
+        "B_prob": 2.2375225283699507e-10,
+        "C_prob": 4.868145331293761e-10,
+        "D_prob": 4.41521597061012e-10
+      },
+      {
+        "step_idx": 2,
+        "generated_token": " ]",
+        "A_prob": 4.081120510979197e-11,
+        "B_prob": 1.1421747228568258e-11,
+        "C_prob": 2.8774702065526014e-10,
+        "D_prob": 1.359220791474769e-10
+      },
+      {
+        "step_idx": 3,
+        "generated_token": " arguing",
+        "A_prob": 1.5488477167480141e-09,
+        "B_prob": 2.031949275504985e-09,
+        "C_prob": 2.403233445580355e-10,
+        "D_prob": 3.87047616179359e-10
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " someone",
+        "A_prob": 4.468156053483163e-11,
+        "B_prob": 1.8626045150682558e-11,
+        "C_prob": 4.321589960887273e-12,
+        "D_prob": 2.6314356509765657e-12
+      },
+      {
+        "step_idx": 5,
+        "generated_token": " should",
+        "A_prob": 3.172232442005818e-12,
+        "B_prob": 3.4423978018159954e-14,
+        "C_prob": 9.396837474806574e-12,
+        "D_prob": 6.33153875466072e-14
+      },
+      {
+        "step_idx": 6,
+        "generated_token": " do",
+        "A_prob": 3.38537873290079e-08,
+        "B_prob": 1.928930792871597e-08,
+        "C_prob": 3.492842282071251e-08,
+        "D_prob": 5.440798922506929e-09
+      },
+      {
+        "step_idx": 7,
+        "generated_token": " something",
+        "A_prob": 1.2629068635305885e-07,
+        "B_prob": 2.0941048006761775e-08,
+        "C_prob": 6.154916576406322e-08,
+        "D_prob": 1.1931849286384022e-08
+      },
+      {
+        "step_idx": 8,
+        "generated_token": " only",
+        "A_prob": 4.1940872108625626e-08,
+        "B_prob": 5.879178477385949e-09,
+        "C_prob": 5.665849656111277e-08,
+        "D_prob": 3.253623859222898e-08
+      },
+      {
+        "step_idx": 9,
+        "generated_token": " because",
+        "A_prob": 2.6306668843290026e-08,
+        "B_prob": 5.139778824769792e-09,
+        "C_prob": 9.677682655251374e-09,
+        "D_prob": 3.443436924488452e-10
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " other",
+        "A_prob": 3.2736415574857736e-12,
+        "B_prob": 1.4267959643626815e-13,
+        "C_prob": 7.669267998444695e-12,
+        "D_prob": 4.429310379843593e-13
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " people",
+        "A_prob": 2.9199354045772452e-09,
+        "B_prob": 4.0771436227160507e-10,
+        "C_prob": 8.045268895529034e-10,
+        "D_prob": 9.33128088687063e-11
+      },
+      {
+        "step_idx": 12,
+        "generated_token": " will",
+        "A_prob": 1.201561516950278e-08,
+        "B_prob": 1.8532060608311696e-10,
+        "C_prob": 1.2991977271781252e-08,
+        "D_prob": 2.257667164329291e-09
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " like",
+        "A_prob": 1.1146683931428925e-07,
+        "B_prob": 2.065960380548404e-08,
+        "C_prob": 5.432459815324364e-08,
+        "D_prob": 6.414474000848713e-07
+      },
+      {
+        "step_idx": 14,
+        "generated_token": " him",
+        "A_prob": 7.860304407358853e-09,
+        "B_prob": 2.991741854252439e-10,
+        "C_prob": 6.218012327252609e-09,
+        "D_prob": 3.612255217166904e-10
+      },
+      {
+        "step_idx": 15,
+        "generated_token": " or",
+        "A_prob": 4.064156122751683e-09,
+        "B_prob": 1.6644231826123956e-10,
+        "C_prob": 1.7579812605639233e-10,
+        "D_prob": 8.978890547739482e-11
+      },
+      {
+        "step_idx": 16,
+        "generated_token": " her",
+        "A_prob": 4.916246298947158e-10,
+        "B_prob": 1.2237505453427389e-10,
+        "C_prob": 8.410706159311943e-11,
+        "D_prob": 2.2862668702661182e-10
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " for",
+        "A_prob": 7.956766356898015e-10,
+        "B_prob": 3.2080723494365415e-11,
+        "C_prob": 2.973226664870765e-10,
+        "D_prob": 6.016926540342027e-11
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " doing",
+        "A_prob": 4.4779825680851815e-11,
+        "B_prob": 1.2465304830011625e-11,
+        "C_prob": 4.940499120920094e-10,
+        "D_prob": 2.5577142834243283e-11
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " it",
+        "A_prob": 1.3882343191662372e-11,
+        "B_prob": 9.65221283975859e-13,
+        "C_prob": 4.6963360283980293e-11,
+        "D_prob": 2.166679596155019e-12
+      }
+    ]
+  },
+  {
+    "question_id": 6,
+    "prompt_text": "GDP is $10 million consumer spending is $6 million government spending is $3 million exports are $2 million and imports are $3 million. How much is spent for investments?\n\n[ A ] $0 million\n[ B ] $1 million\n[ C ] $2 million\n[ D ] $3 million\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: GDP is $10 million consumer spending is $6 million government spending is $3 million exports are $2 million and imports are $3 million. How much is spent for investments?\n\n[ A ] $0 million\n[ B ] $1 million\n[ C ] $2 million\n[ D ] $3 million\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: To determine how much is spent on investments, we need to analyze the given data and understand the components",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": " spending",
+        "A_prob": 1.7469795610125516e-09,
+        "B_prob": 3.5845695300906755e-09,
+        "C_prob": 6.735206281582862e-10,
+        "D_prob": 7.952714931036553e-09
+      },
+      {
+        "step_idx": 1,
+        "generated_token": " is",
+        "A_prob": 8.442966464849988e-11,
+        "B_prob": 2.462214598875079e-10,
+        "C_prob": 4.709108658573768e-10,
+        "D_prob": 7.098996945842373e-08
+      },
+      {
+        "step_idx": 2,
+        "generated_token": " $",
+        "A_prob": 1.9251512883844413e-10,
+        "B_prob": 4.2894218732492106e-10,
+        "C_prob": 8.661698580603172e-10,
+        "D_prob": 1.9982329124701437e-09
+      },
+      {
+        "step_idx": 3,
+        "generated_token": "3",
+        "A_prob": 2.092701879841119e-11,
+        "B_prob": 2.1675817390987007e-11,
+        "C_prob": 3.228603148719422e-11,
+        "D_prob": 2.362096802877023e-11
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " million",
+        "A_prob": 1.3878183047211223e-08,
+        "B_prob": 2.897684092673103e-09,
+        "C_prob": 5.785287804371819e-09,
+        "D_prob": 4.786098739550937e-10
+      },
+      {
+        "step_idx": 5,
+        "generated_token": " exports",
+        "A_prob": 3.330431416759261e-11,
+        "B_prob": 3.4965641493300836e-12,
+        "C_prob": 1.3561697771724557e-11,
+        "D_prob": 1.7650641148322932e-12
+      },
+      {
+        "step_idx": 6,
+        "generated_token": " are",
+        "A_prob": 1.0773504310890303e-10,
+        "B_prob": 2.466079562779555e-10,
+        "C_prob": 3.477729493273074e-10,
+        "D_prob": 2.1425672347419322e-10
+      },
+      {
+        "step_idx": 7,
+        "generated_token": " $",
+        "A_prob": 3.159338901603803e-10,
+        "B_prob": 2.015756832285387e-11,
+        "C_prob": 2.372823638963073e-11,
+        "D_prob": 2.8766106163757854e-10
+      },
+      {
+        "step_idx": 8,
+        "generated_token": "2",
+        "A_prob": 1.1149055900716576e-08,
+        "B_prob": 1.2244843361486346e-08,
+        "C_prob": 1.2905967405885121e-09,
+        "D_prob": 1.9989154775856832e-09
+      },
+      {
+        "step_idx": 9,
+        "generated_token": " million",
+        "A_prob": 1.9721630578617422e-11,
+        "B_prob": 1.8418520181251452e-11,
+        "C_prob": 4.559307653639877e-10,
+        "D_prob": 7.384944739063926e-11
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " and",
+        "A_prob": 7.963247283804264e-10,
+        "B_prob": 1.0323814025881006e-10,
+        "C_prob": 3.319575447857659e-10,
+        "D_prob": 1.804821986306493e-10
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " imports",
+        "A_prob": 3.127294256888291e-10,
+        "B_prob": 1.922623518724187e-11,
+        "C_prob": 5.93456173092477e-10,
+        "D_prob": 4.078760384995661e-10
+      },
+      {
+        "step_idx": 12,
+        "generated_token": " are",
+        "A_prob": 3.7310021738790056e-10,
+        "B_prob": 1.309704983354365e-10,
+        "C_prob": 9.527448829871332e-10,
+        "D_prob": 2.8830948739511086e-10
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " $",
+        "A_prob": 3.037456397514404e-11,
+        "B_prob": 3.233355250209513e-11,
+        "C_prob": 9.673332135307078e-10,
+        "D_prob": 1.589959830461396e-10
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "3",
+        "A_prob": 5.73311287332956e-10,
+        "B_prob": 3.2666291893690413e-10,
+        "C_prob": 1.2919769698527261e-09,
+        "D_prob": 3.3703231872017625e-10
+      },
+      {
+        "step_idx": 15,
+        "generated_token": " million",
+        "A_prob": 4.7776396172594104e-09,
+        "B_prob": 1.2988202735542131e-09,
+        "C_prob": 1.8102910281925233e-09,
+        "D_prob": 1.8677559499025165e-09
+      },
+      {
+        "step_idx": 16,
+        "generated_token": ".",
+        "A_prob": 4.518431140354551e-08,
+        "B_prob": 1.9852601784720036e-09,
+        "C_prob": 1.8256113065717727e-08,
+        "D_prob": 9.471146533712727e-09
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " How",
+        "A_prob": 1.8194447337638309e-10,
+        "B_prob": 2.907464546897387e-10,
+        "C_prob": 9.044855531215035e-09,
+        "D_prob": 5.485982779163123e-09
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " much",
+        "A_prob": 2.0544897727514666e-10,
+        "B_prob": 5.677322847952304e-11,
+        "C_prob": 1.9954704555402714e-09,
+        "D_prob": 7.769881626984443e-09
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " is",
+        "A_prob": 4.863240032904059e-09,
+        "B_prob": 2.498123929939311e-10,
+        "C_prob": 1.9537386819479252e-08,
+        "D_prob": 1.0135862815729979e-08
+      }
+    ]
+  },
+  {
+    "question_id": 7,
+    "prompt_text": "To verify a digital signature we need the\n\n[ A ] Sender\u2019s Private key\n[ B ] Sender\u2019s Public key\n[ C ] Receiver\u2019s Private key\n[ D ] Receiver\u2019s Public key\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: To verify a digital signature we need the\n\n[ A ] Sender\u2019s Private key\n[ B ] Sender\u2019s Public key\n[ C ] Receiver\u2019s Private key\n[ D ] Receiver\u2019s Public key\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: To verify a digital signature, you need the receiver's public key. This is because the receiver can",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": "",
+        "A_prob": 9.65967195121209e-10,
+        "B_prob": 4.885002471977096e-11,
+        "C_prob": 8.227685893702485e-12,
+        "D_prob": 3.0395508332503596e-10
+      },
+      {
+        "step_idx": 1,
+        "generated_token": "",
+        "A_prob": 6.37672026293501e-10,
+        "B_prob": 8.124152461874701e-10,
+        "C_prob": 2.439313195878867e-10,
+        "D_prob": 2.4065491821545493e-09
+      },
+      {
+        "step_idx": 2,
+        "generated_token": "",
+        "A_prob": 4.051961544071503e-10,
+        "B_prob": 8.778803205211627e-12,
+        "C_prob": 2.8949418817009187e-12,
+        "D_prob": 1.4003204151791238e-10
+      },
+      {
+        "step_idx": 3,
+        "generated_token": "",
+        "A_prob": 1.7378060795936179e-12,
+        "B_prob": 1.9497644059181252e-13,
+        "C_prob": 2.665011765955183e-13,
+        "D_prob": 3.3567586210647704e-11
+      },
+      {
+        "step_idx": 4,
+        "generated_token": "",
+        "A_prob": 3.324350777295093e-12,
+        "B_prob": 7.957954499364372e-13,
+        "C_prob": 1.3966645765264851e-12,
+        "D_prob": 4.7050294975196916e-14
+      },
+      {
+        "step_idx": 5,
+        "generated_token": "",
+        "A_prob": 1.9122661232273686e-09,
+        "B_prob": 1.1598479954244567e-09,
+        "C_prob": 1.0895764290808074e-09,
+        "D_prob": 5.741663811065223e-10
+      },
+      {
+        "step_idx": 6,
+        "generated_token": "",
+        "A_prob": 7.084915987221052e-11,
+        "B_prob": 1.2063623711089377e-10,
+        "C_prob": 6.375733968555508e-11,
+        "D_prob": 9.332546957452337e-10
+      },
+      {
+        "step_idx": 7,
+        "generated_token": "",
+        "A_prob": 1.3212062555112425e-09,
+        "B_prob": 7.587049322133055e-10,
+        "C_prob": 1.1300875790709597e-09,
+        "D_prob": 8.285297781185363e-09
+      },
+      {
+        "step_idx": 8,
+        "generated_token": "",
+        "A_prob": 3.300358319968666e-10,
+        "B_prob": 1.0885051748843466e-09,
+        "C_prob": 1.284888168084919e-10,
+        "D_prob": 4.6830002986553154e-08
+      },
+      {
+        "step_idx": 9,
+        "generated_token": "",
+        "A_prob": 2.934923415409685e-09,
+        "B_prob": 2.934923415409685e-09,
+        "C_prob": 1.695542017898788e-08,
+        "D_prob": 7.250913824918825e-08
+      },
+      {
+        "step_idx": 10,
+        "generated_token": "",
+        "A_prob": 7.262022233556209e-11,
+        "B_prob": 3.324796341019898e-11,
+        "C_prob": 3.5744926463188165e-10,
+        "D_prob": 3.8429419646490715e-09
+      },
+      {
+        "step_idx": 11,
+        "generated_token": "",
+        "A_prob": 9.770324826963162e-11,
+        "B_prob": 1.9456190131217355e-11,
+        "C_prob": 2.1202152880595015e-11,
+        "D_prob": 7.650116651269911e-11
+      },
+      {
+        "step_idx": 12,
+        "generated_token": "",
+        "A_prob": 9.656813543257314e-12,
+        "B_prob": 5.834319572600721e-12,
+        "C_prob": 6.913874312473867e-13,
+        "D_prob": 3.383751265295665e-11
+      },
+      {
+        "step_idx": 13,
+        "generated_token": "",
+        "A_prob": 2.8806523832969333e-09,
+        "B_prob": 1.6125059620897275e-10,
+        "C_prob": 4.281707488562603e-10,
+        "D_prob": 8.125253248003617e-10
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "",
+        "A_prob": 7.448178185320842e-10,
+        "B_prob": 1.674947819330086e-10,
+        "C_prob": 1.0319053250773536e-10,
+        "D_prob": 1.4783568813570014e-09
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "",
+        "A_prob": 7.935215151633201e-09,
+        "B_prob": 2.2605325611380067e-08,
+        "C_prob": 1.2483845956978712e-08,
+        "D_prob": 1.6538407976440794e-08
+      },
+      {
+        "step_idx": 16,
+        "generated_token": "",
+        "A_prob": 2.507255070227643e-09,
+        "B_prob": 7.411432023651798e-10,
+        "C_prob": 1.2289359807571287e-10,
+        "D_prob": 1.5690001520241026e-09
+      },
+      {
+        "step_idx": 17,
+        "generated_token": "",
+        "A_prob": 4.938791597908221e-10,
+        "B_prob": 3.630441433588594e-11,
+        "C_prob": 3.3576096764020846e-11,
+        "D_prob": 6.918397410515809e-09
+      },
+      {
+        "step_idx": 18,
+        "generated_token": "",
+        "A_prob": 3.2662488269608048e-09,
+        "B_prob": 1.4345642729285402e-10,
+        "C_prob": 6.843922650823231e-10,
+        "D_prob": 4.9502638432841195e-08
+      },
+      {
+        "step_idx": 19,
+        "generated_token": "",
+        "A_prob": 2.1732786237294022e-08,
+        "B_prob": 1.1930085808131707e-09,
+        "C_prob": 1.7909179694797217e-09,
+        "D_prob": 2.7046890949122826e-08
+      }
+    ]
+  },
+  {
+    "question_id": 8,
+    "prompt_text": "When a country combines its religion with its government, it is called a\n\n[ A ] dictatorship.\n[ B ] theocracy.\n[ C ] democracy.\n[ D ] autocracy.\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: When a country combines its religion with its government, it is called a\n\n[ A ] dictatorship.\n[ B ] theocracy.\n[ C ] democracy.\n[ D ] autocracy.\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: The question is asking what happens when a country combines its religion with its government. The options are dictatorship",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": "",
+        "A_prob": 3.923501168401344e-08,
+        "B_prob": 9.282800306209538e-09,
+        "C_prob": 6.183678458171471e-09,
+        "D_prob": 1.0768237856950691e-08
+      },
+      {
+        "step_idx": 1,
+        "generated_token": "",
+        "A_prob": 5.638029847432335e-07,
+        "B_prob": 4.575425009534229e-06,
+        "C_prob": 1.4939291759219486e-07,
+        "D_prob": 2.79102749800586e-07
+      },
+      {
+        "step_idx": 2,
+        "generated_token": "",
+        "A_prob": 1.2582684894013596e-09,
+        "B_prob": 3.6904895805989213e-10,
+        "C_prob": 3.8375019828507106e-10,
+        "D_prob": 1.4258049185755794e-09
+      },
+      {
+        "step_idx": 3,
+        "generated_token": "",
+        "A_prob": 1.4231003042652901e-09,
+        "B_prob": 4.3402109684009815e-10,
+        "C_prob": 3.175366081187292e-10,
+        "D_prob": 1.4766823874801105e-10
+      },
+      {
+        "step_idx": 4,
+        "generated_token": "",
+        "A_prob": 5.60649415781711e-10,
+        "B_prob": 1.6702747518415606e-10,
+        "C_prob": 8.975326731830435e-11,
+        "D_prob": 1.2315833075593474e-10
+      },
+      {
+        "step_idx": 5,
+        "generated_token": "",
+        "A_prob": 2.132278575928126e-09,
+        "B_prob": 1.7301476917808145e-09,
+        "C_prob": 5.841593875288709e-09,
+        "D_prob": 9.242743792547969e-10
+      },
+      {
+        "step_idx": 6,
+        "generated_token": "",
+        "A_prob": 8.892030861629152e-11,
+        "B_prob": 4.5062620301905554e-11,
+        "C_prob": 5.923369433835646e-11,
+        "D_prob": 1.0894743440736931e-10
+      },
+      {
+        "step_idx": 7,
+        "generated_token": "",
+        "A_prob": 2.5783974955118083e-10,
+        "B_prob": 8.857323728628241e-12,
+        "C_prob": 1.2687529846178158e-11,
+        "D_prob": 5.309649855206322e-12
+      },
+      {
+        "step_idx": 8,
+        "generated_token": "",
+        "A_prob": 1.0201250955077512e-10,
+        "B_prob": 2.2619146139435387e-12,
+        "C_prob": 4.863881433031514e-12,
+        "D_prob": 6.1485222295487585e-12
+      },
+      {
+        "step_idx": 9,
+        "generated_token": "",
+        "A_prob": 3.519254221373558e-09,
+        "B_prob": 2.9404469970018e-09,
+        "C_prob": 2.756904482481559e-09,
+        "D_prob": 1.90220683649045e-09
+      },
+      {
+        "step_idx": 10,
+        "generated_token": "",
+        "A_prob": 1.49481156619391e-11,
+        "B_prob": 4.7505013811566243e-11,
+        "C_prob": 1.4716365279165977e-11,
+        "D_prob": 3.395030090391771e-11
+      },
+      {
+        "step_idx": 11,
+        "generated_token": "",
+        "A_prob": 3.6546200093967585e-11,
+        "B_prob": 5.246019174620642e-10,
+        "C_prob": 2.410483054479662e-12,
+        "D_prob": 2.5117812343933288e-11
+      },
+      {
+        "step_idx": 12,
+        "generated_token": "",
+        "A_prob": 2.4317728386513693e-11,
+        "B_prob": 5.543026974919041e-13,
+        "C_prob": 4.863851942732422e-12,
+        "D_prob": 2.284439304389707e-11
+      },
+      {
+        "step_idx": 13,
+        "generated_token": "",
+        "A_prob": 1.7549172184883055e-11,
+        "B_prob": 2.1289562994464273e-12,
+        "C_prob": 2.9099379156294347e-12,
+        "D_prob": 1.159929357424927e-11
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "",
+        "A_prob": 2.8631813586699195e-10,
+        "B_prob": 2.753494654506028e-10,
+        "C_prob": 5.0827553971233286e-12,
+        "D_prob": 9.741484008340962e-11
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "",
+        "A_prob": 1.4121370739417216e-09,
+        "B_prob": 5.2043411247204574e-11,
+        "C_prob": 7.721621259060285e-11,
+        "D_prob": 2.098954204887704e-10
+      },
+      {
+        "step_idx": 16,
+        "generated_token": "",
+        "A_prob": 1.9668723247323605e-11,
+        "B_prob": 1.2308373070757384e-11,
+        "C_prob": 3.617631888497286e-11,
+        "D_prob": 7.658527284570837e-11
+      },
+      {
+        "step_idx": 17,
+        "generated_token": "",
+        "A_prob": 6.150322473530423e-10,
+        "B_prob": 1.7114774042426006e-09,
+        "C_prob": 2.4464294479109583e-10,
+        "D_prob": 7.911428456797154e-11
+      },
+      {
+        "step_idx": 18,
+        "generated_token": "",
+        "A_prob": 1.2556315986955724e-09,
+        "B_prob": 9.277933088469581e-09,
+        "C_prob": 1.5626586691297462e-09,
+        "D_prob": 1.9447601307120976e-09
+      },
+      {
+        "step_idx": 19,
+        "generated_token": "",
+        "A_prob": 0.00014167185872793198,
+        "B_prob": 3.2801478937471984e-06,
+        "C_prob": 7.791034022375243e-07,
+        "D_prob": 1.5738322645120206e-06
+      }
+    ]
+  },
+  {
+    "question_id": 9,
+    "prompt_text": "A hedonic teenager of wayward morals, in one night, sequentially i) has consensual sexual intercourse with his sister, ii) leaves no tip at the bar, iii) has non-censual sexual relations with an unknown woman, and iv) vomits on the steps to the door of a local church. The teenager has violated society\u2019s norms sequentially (to the greatest degree) on the order of:\n\n[ A ] mores, mores, the law, mores\n[ B ] taboo, folkways, the law, and taboo\n[ C ] the law, folkways, folkways, and folkways\n[ D ] taboo, folkways, the law, and mores\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: A hedonic teenager of wayward morals, in one night, sequentially i) has consensual sexual intercourse with his sister, ii) leaves no tip at the bar, iii) has non-censual sexual relations with an unknown woman, and iv) vomits on the steps to the door of a local church. The teenager has violated society\u2019s norms sequentially (to the greatest degree) on the order of:\n\n[ A ] mores, mores, the law, mores\n[ B ] taboo, folkways, the law, and taboo\n[ C ] the law, folkways, folkways, and folkways\n[ D ] taboo, folkways, the law, and mores\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: To determine the correct answer, I need to analyze each of the four actions the teenager took and assess",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": " To",
+        "A_prob": 2.9226181474939494e-09,
+        "B_prob": 8.115816907405815e-10,
+        "C_prob": 5.078748532838517e-10,
+        "D_prob": 1.5044347989601192e-09
+      },
+      {
+        "step_idx": 1,
+        "generated_token": " determine",
+        "A_prob": 8.005398011157183e-10,
+        "B_prob": 1.4271164250345691e-09,
+        "C_prob": 1.617134759435146e-09,
+        "D_prob": 1.0650116877286564e-07
+      },
+      {
+        "step_idx": 2,
+        "generated_token": " the",
+        "A_prob": 7.017964542832544e-10,
+        "B_prob": 5.595208740771795e-10,
+        "C_prob": 4.3917300351914434e-10,
+        "D_prob": 4.357553207157139e-10
+      },
+      {
+        "step_idx": 3,
+        "generated_token": " correct",
+        "A_prob": 1.2389035353166378e-09,
+        "B_prob": 4.567263900412399e-09,
+        "C_prob": 2.700734080818279e-09,
+        "D_prob": 1.4148723304074906e-09
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " answer",
+        "A_prob": 2.7210600439531163e-10,
+        "B_prob": 5.138512393365602e-10,
+        "C_prob": 2.3300676943449616e-09,
+        "D_prob": 3.3111996478041306e-10
+      },
+      {
+        "step_idx": 5,
+        "generated_token": ",",
+        "A_prob": 2.8040092470149602e-09,
+        "B_prob": 3.91527477106024e-10,
+        "C_prob": 2.7333019181341456e-10,
+        "D_prob": 1.0980658604609062e-09
+      },
+      {
+        "step_idx": 6,
+        "generated_token": " I",
+        "A_prob": 3.868652793947991e-12,
+        "B_prob": 1.6001442792318299e-12,
+        "C_prob": 3.999857736691759e-11,
+        "D_prob": 2.6588835300156433e-12
+      },
+      {
+        "step_idx": 7,
+        "generated_token": " need",
+        "A_prob": 3.3268381105511224e-11,
+        "B_prob": 8.954063185351302e-12,
+        "C_prob": 9.257738325940679e-11,
+        "D_prob": 7.26648255455764e-11
+      },
+      {
+        "step_idx": 8,
+        "generated_token": " to",
+        "A_prob": 1.0239782979870604e-11,
+        "B_prob": 8.947421796523525e-13,
+        "C_prob": 7.0928896436783795e-12,
+        "D_prob": 1.0401035935303504e-11
+      },
+      {
+        "step_idx": 9,
+        "generated_token": " analyze",
+        "A_prob": 2.4961640393561524e-11,
+        "B_prob": 4.0536532464052755e-11,
+        "C_prob": 3.0528524153083936e-10,
+        "D_prob": 1.1143418132686378e-10
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " each",
+        "A_prob": 2.2872516380889607e-10,
+        "B_prob": 3.777849214015028e-11,
+        "C_prob": 4.3823816103794044e-11,
+        "D_prob": 7.3678327328075e-11
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " of",
+        "A_prob": 1.3562161882418877e-07,
+        "B_prob": 4.2260516863734665e-08,
+        "C_prob": 2.6806001862667017e-09,
+        "D_prob": 1.566870899694095e-08
+      },
+      {
+        "step_idx": 12,
+        "generated_token": " the",
+        "A_prob": 2.680296817825223e-10,
+        "B_prob": 1.597116883189642e-11,
+        "C_prob": 6.977287237558416e-12,
+        "D_prob": 1.95682862275115e-11
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " four",
+        "A_prob": 1.3985608404709637e-07,
+        "B_prob": 7.361605103284319e-09,
+        "C_prob": 2.109135088801395e-09,
+        "D_prob": 1.5105031891948784e-08
+      },
+      {
+        "step_idx": 14,
+        "generated_token": " actions",
+        "A_prob": 1.7255662498882884e-07,
+        "B_prob": 5.120728374663486e-08,
+        "C_prob": 5.6562252659375645e-09,
+        "D_prob": 3.4920333291665884e-08
+      },
+      {
+        "step_idx": 15,
+        "generated_token": " the",
+        "A_prob": 6.749769632108382e-09,
+        "B_prob": 2.3829602180391873e-10,
+        "C_prob": 1.445338432271015e-10,
+        "D_prob": 1.1081795203704559e-10
+      },
+      {
+        "step_idx": 16,
+        "generated_token": " teenager",
+        "A_prob": 6.835376353819811e-08,
+        "B_prob": 2.125153941712199e-10,
+        "C_prob": 6.3808687500444e-11,
+        "D_prob": 9.284109592222478e-11
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " took",
+        "A_prob": 6.545574393612696e-08,
+        "B_prob": 2.4459025027567804e-08,
+        "C_prob": 7.302115534457698e-08,
+        "D_prob": 7.007627811361772e-09
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " and",
+        "A_prob": 3.7679162567805236e-10,
+        "B_prob": 1.2328574272579829e-10,
+        "C_prob": 2.8220387138233605e-10,
+        "D_prob": 5.525283564011829e-10
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " assess",
+        "A_prob": 5.352290138871396e-11,
+        "B_prob": 3.90113524817437e-10,
+        "C_prob": 3.318313801514705e-08,
+        "D_prob": 4.3960515228036456e-08
+      }
+    ]
+  },
+  {
+    "question_id": 10,
+    "prompt_text": "Turning up the volume on a music player changes which aspect of sound?\n\n[ A ] amplitude of the wave\n[ B ] frequency of the wave\n[ C ] pitch of the tone\n[ D ] transduction of the tone\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: Turning up the volume on a music player changes which aspect of sound?\n\n[ A ] amplitude of the wave\n[ B ] frequency of the wave\n[ C ] pitch of the tone\n[ D ] transduction of the tone\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: The volume change affects the loudness of the sound, which is related to the amplitude of the wave",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": "",
+        "A_prob": 1.9559298625182464e-09,
+        "B_prob": 1.0971772379519962e-09,
+        "C_prob": 2.0615349705099817e-10,
+        "D_prob": 2.1650170545228775e-09
+      },
+      {
+        "step_idx": 1,
+        "generated_token": "",
+        "A_prob": 1.477211526434985e-07,
+        "B_prob": 2.4355097139050486e-07,
+        "C_prob": 4.232281369809243e-08,
+        "D_prob": 4.166665945604109e-08
+      },
+      {
+        "step_idx": 2,
+        "generated_token": "",
+        "A_prob": 1.5463310631957938e-09,
+        "B_prob": 8.053657740703102e-10,
+        "C_prob": 1.192402426797301e-10,
+        "D_prob": 3.1171140668639907e-10
+      },
+      {
+        "step_idx": 3,
+        "generated_token": "",
+        "A_prob": 2.4780709040328475e-08,
+        "B_prob": 8.886431590582333e-10,
+        "C_prob": 6.86690149187541e-10,
+        "D_prob": 1.5354377769227767e-09
+      },
+      {
+        "step_idx": 4,
+        "generated_token": "",
+        "A_prob": 2.5343451781623116e-09,
+        "B_prob": 7.566157478322566e-09,
+        "C_prob": 4.761893657168059e-10,
+        "D_prob": 1.5133266861866446e-09
+      },
+      {
+        "step_idx": 5,
+        "generated_token": "",
+        "A_prob": 1.2900573054253073e-08,
+        "B_prob": 6.449880629588733e-08,
+        "C_prob": 2.789944719694404e-09,
+        "D_prob": 4.9156696491081675e-09
+      },
+      {
+        "step_idx": 6,
+        "generated_token": "",
+        "A_prob": 2.1881634213447888e-14,
+        "B_prob": 3.1165529683872817e-13,
+        "C_prob": 4.705291061293804e-14,
+        "D_prob": 1.758238804658481e-14
+      },
+      {
+        "step_idx": 7,
+        "generated_token": "",
+        "A_prob": 1.4175480789191397e-09,
+        "B_prob": 2.879923521881267e-10,
+        "C_prob": 4.2514616827027396e-11,
+        "D_prob": 5.659840651706105e-11
+      },
+      {
+        "step_idx": 8,
+        "generated_token": "",
+        "A_prob": 3.6399405711762256e-10,
+        "B_prob": 1.992278564344474e-11,
+        "C_prob": 8.427604100691433e-12,
+        "D_prob": 1.932869142518001e-11
+      },
+      {
+        "step_idx": 9,
+        "generated_token": "",
+        "A_prob": 2.0277603207663475e-10,
+        "B_prob": 2.3473030810738926e-11,
+        "C_prob": 4.694901151874875e-12,
+        "D_prob": 2.6807040962029127e-11
+      },
+      {
+        "step_idx": 10,
+        "generated_token": "",
+        "A_prob": 4.630146932527168e-09,
+        "B_prob": 1.2461871534696911e-09,
+        "C_prob": 2.45388792619039e-10,
+        "D_prob": 5.19488063677187e-10
+      },
+      {
+        "step_idx": 11,
+        "generated_token": "",
+        "A_prob": 2.104485752330021e-10,
+        "B_prob": 3.25949128798797e-10,
+        "C_prob": 4.622941959797622e-11,
+        "D_prob": 1.6296431981643877e-09
+      },
+      {
+        "step_idx": 12,
+        "generated_token": "",
+        "A_prob": 8.636245607540616e-10,
+        "B_prob": 2.831715528728296e-09,
+        "C_prob": 6.029070576119011e-10,
+        "D_prob": 8.7222984390678e-09
+      },
+      {
+        "step_idx": 13,
+        "generated_token": "",
+        "A_prob": 1.774139946064679e-09,
+        "B_prob": 1.2193474008270755e-09,
+        "C_prob": 2.382352648488961e-10,
+        "D_prob": 1.967926976931267e-08
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "",
+        "A_prob": 2.9687610703099665e-10,
+        "B_prob": 1.5857258214846404e-11,
+        "C_prob": 1.5644271988968228e-10,
+        "D_prob": 1.0361994595697865e-09
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "",
+        "A_prob": 5.637339928199481e-09,
+        "B_prob": 4.673518905207175e-09,
+        "C_prob": 1.414039579872295e-10,
+        "D_prob": 1.1633308760750083e-09
+      },
+      {
+        "step_idx": 16,
+        "generated_token": "",
+        "A_prob": 8.905163828565321e-10,
+        "B_prob": 5.328707697316304e-09,
+        "C_prob": 3.646996593609231e-11,
+        "D_prob": 7.483150904485925e-11
+      },
+      {
+        "step_idx": 17,
+        "generated_token": "",
+        "A_prob": 3.9549180597120426e-10,
+        "B_prob": 1.0479490192283336e-10,
+        "C_prob": 4.267304912208836e-11,
+        "D_prob": 7.431071036290149e-11
+      },
+      {
+        "step_idx": 18,
+        "generated_token": "",
+        "A_prob": 1.0423682750282381e-10,
+        "B_prob": 7.404842364278075e-12,
+        "C_prob": 7.303203181097118e-13,
+        "D_prob": 1.8075602863446005e-12
+      },
+      {
+        "step_idx": 19,
+        "generated_token": "",
+        "A_prob": 5.612104669872053e-10,
+        "B_prob": 1.7969747218016252e-11,
+        "C_prob": 7.147872571611202e-12,
+        "D_prob": 6.113899317372606e-12
+      }
+    ]
+  },
+  {
+    "question_id": 11,
+    "prompt_text": "The cooperative international organization of 185 countries designed to stabilize the exchange of currencies and the world economy is\n\n[ A ] the World Bank.\n[ B ] the United Nations.\n[ C ] UNICEF.\n[ D ] the International Monetary Fund.\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: The cooperative international organization of 185 countries designed to stabilize the exchange of currencies and the world economy is\n\n[ A ] the World Bank.\n[ B ] the United Nations.\n[ C ] UNICEF.\n[ D ] the International Monetary Fund.\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: The cooperative international organization of 185 countries designed to stabilize the exchange of currencies and the world",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": "",
+        "A_prob": 1.647094904910773e-08,
+        "B_prob": 9.95118831781383e-09,
+        "C_prob": 5.725658169808412e-09,
+        "D_prob": 2.28676491076385e-08
+      },
+      {
+        "step_idx": 1,
+        "generated_token": "",
+        "A_prob": 2.9793132405586675e-09,
+        "B_prob": 5.631700883412805e-09,
+        "C_prob": 3.855518126982815e-09,
+        "D_prob": 3.026230599445512e-09
+      },
+      {
+        "step_idx": 2,
+        "generated_token": "",
+        "A_prob": 4.316736551546185e-11,
+        "B_prob": 5.2069782513486373e-11,
+        "C_prob": 7.172915733599794e-11,
+        "D_prob": 2.141437166480742e-10
+      },
+      {
+        "step_idx": 3,
+        "generated_token": "",
+        "A_prob": 1.0137428396728154e-10,
+        "B_prob": 7.097829268776223e-11,
+        "C_prob": 1.033737123679046e-10,
+        "D_prob": 2.3824789363580123e-10
+      },
+      {
+        "step_idx": 4,
+        "generated_token": "",
+        "A_prob": 1.17420002609947e-08,
+        "B_prob": 2.4805608678235558e-09,
+        "C_prob": 6.2850395998736985e-09,
+        "D_prob": 5.722593510171237e-09
+      },
+      {
+        "step_idx": 5,
+        "generated_token": "",
+        "A_prob": 1.896828388803229e-10,
+        "B_prob": 3.309093971060051e-11,
+        "C_prob": 2.145514432783102e-09,
+        "D_prob": 1.5786806584205948e-10
+      },
+      {
+        "step_idx": 6,
+        "generated_token": "",
+        "A_prob": 3.2659785249508633e-13,
+        "B_prob": 1.2591468666334205e-13,
+        "C_prob": 6.982969757984847e-12,
+        "D_prob": 2.4274313028399552e-12
+      },
+      {
+        "step_idx": 7,
+        "generated_token": "",
+        "A_prob": 3.417497951296866e-10,
+        "B_prob": 5.376479261798295e-10,
+        "C_prob": 5.376479261798295e-10,
+        "D_prob": 3.581507035388398e-10
+      },
+      {
+        "step_idx": 8,
+        "generated_token": "",
+        "A_prob": 2.409644928036414e-09,
+        "B_prob": 1.5557836130497549e-09,
+        "C_prob": 2.1476930456287846e-08,
+        "D_prob": 2.5650535029342336e-09
+      },
+      {
+        "step_idx": 9,
+        "generated_token": "",
+        "A_prob": 3.581449581346874e-10,
+        "B_prob": 5.000824060408249e-11,
+        "C_prob": 5.9636486859915294e-09,
+        "D_prob": 5.293038785048054e-10
+      },
+      {
+        "step_idx": 10,
+        "generated_token": "",
+        "A_prob": 5.382138823506466e-08,
+        "B_prob": 2.658756326212597e-09,
+        "C_prob": 7.937580370764863e-09,
+        "D_prob": 2.5769548717136104e-09
+      },
+      {
+        "step_idx": 11,
+        "generated_token": "",
+        "A_prob": 4.661906416458805e-10,
+        "B_prob": 1.5371041245382244e-11,
+        "C_prob": 8.574559395846393e-10,
+        "D_prob": 3.5189917646505364e-10
+      },
+      {
+        "step_idx": 12,
+        "generated_token": "",
+        "A_prob": 1.9158158393040026e-10,
+        "B_prob": 6.184329159886204e-10,
+        "C_prob": 2.2750874795196552e-10,
+        "D_prob": 3.7139784303530377e-11
+      },
+      {
+        "step_idx": 13,
+        "generated_token": "",
+        "A_prob": 6.528061424759812e-11,
+        "B_prob": 3.0239952902855194e-11,
+        "C_prob": 7.130979184921671e-08,
+        "D_prob": 7.559036729887225e-10
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "",
+        "A_prob": 2.6884891882184014e-12,
+        "B_prob": 1.2899512187580786e-12,
+        "C_prob": 6.960843706993458e-11,
+        "D_prob": 4.221964791661925e-11
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "User",
+        "A_prob": 5.4384864667245125e-12,
+        "B_prob": 2.624748291976675e-12,
+        "C_prob": 6.396553425824791e-11,
+        "D_prob": 1.5520776937977265e-12
+      },
+      {
+        "step_idx": 16,
+        "generated_token": ":",
+        "A_prob": 3.6224866422490676e-12,
+        "B_prob": 5.698971242834583e-12,
+        "C_prob": 6.972023403051253e-09,
+        "D_prob": 1.0730587425566984e-11
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " The",
+        "A_prob": 1.5148854393132183e-10,
+        "B_prob": 6.314981870758629e-11,
+        "C_prob": 2.4976240520224735e-10,
+        "D_prob": 9.188244609603657e-11
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " cooperative",
+        "A_prob": 9.129402789298524e-11,
+        "B_prob": 2.941256960209415e-10,
+        "C_prob": 6.680210828946542e-10,
+        "D_prob": 9.059709094039192e-10
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " international",
+        "A_prob": 3.1643353844319766e-13,
+        "B_prob": 5.553581683068187e-13,
+        "C_prob": 4.2008866003862e-12,
+        "D_prob": 6.270370334071629e-11
+      }
+    ]
+  },
+  {
+    "question_id": 12,
+    "prompt_text": "For which of these two scenarios does the main character (who uses I/me/my) do something clearly morally wrong, according to ordinary moral standards in the US as of 2020? Scenario 1 | I led the innocent man to his home. Scenario 2 | I made my baby a cocktail to drink.\n\n[ A ] Wrong, Wrong\n[ B ] Wrong, Not wrong\n[ C ] Not wrong, Wrong\n[ D ] Not wrong, Not wrong\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: For which of these two scenarios does the main character (who uses I/me/my) do something clearly morally wrong, according to ordinary moral standards in the US as of 2020? Scenario 1 | I led the innocent man to his home. Scenario 2 | I made my baby a cocktail to drink.\n\n[ A ] Wrong, Wrong\n[ B ] Wrong, Not wrong\n[ C ] Not wrong, Wrong\n[ D ] Not wrong, Not wrong\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: The main character uses I/me/my pronouns, so the question is about which scenario involves a clear",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": " B",
+        "A_prob": 6.73911371151803e-10,
+        "B_prob": 7.756671971392848e-10,
+        "C_prob": 8.927874550757053e-10,
+        "D_prob": 2.881953564681794e-09
+      },
+      {
+        "step_idx": 1,
+        "generated_token": " ]",
+        "A_prob": 4.995924562933851e-09,
+        "B_prob": 5.3808224542706284e-09,
+        "C_prob": 4.067612469071946e-09,
+        "D_prob": 6.402377739078702e-09
+      },
+      {
+        "step_idx": 2,
+        "generated_token": " Wrong",
+        "A_prob": 5.169982775221627e-10,
+        "B_prob": 1.907510815968294e-10,
+        "C_prob": 2.5622102217681686e-09,
+        "D_prob": 3.6416352156010134e-09
+      },
+      {
+        "step_idx": 3,
+        "generated_token": ",",
+        "A_prob": 4.610572901242449e-08,
+        "B_prob": 5.145209591717048e-09,
+        "C_prob": 4.4687201494753026e-08,
+        "D_prob": 1.532329996223325e-08
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " Not",
+        "A_prob": 7.3249561971522326e-09,
+        "B_prob": 1.3841998380836884e-10,
+        "C_prob": 1.300335394915919e-10,
+        "D_prob": 3.143807991712322e-10
+      },
+      {
+        "step_idx": 5,
+        "generated_token": " wrong",
+        "A_prob": 6.560753329498681e-11,
+        "B_prob": 2.2673356248059662e-11,
+        "C_prob": 1.2521417062927309e-11,
+        "D_prob": 1.9393551001223308e-11
+      },
+      {
+        "step_idx": 6,
+        "generated_token": "\n",
+        "A_prob": 6.510395000880465e-11,
+        "B_prob": 1.8546389424223264e-10,
+        "C_prob": 6.930279267125528e-11,
+        "D_prob": 9.927166727541348e-11
+      },
+      {
+        "step_idx": 7,
+        "generated_token": "[",
+        "A_prob": 5.029401606293504e-08,
+        "B_prob": 2.6011977016793253e-09,
+        "C_prob": 9.068855111316054e-10,
+        "D_prob": 2.52894167829254e-08
+      },
+      {
+        "step_idx": 8,
+        "generated_token": " C",
+        "A_prob": 2.080297933915176e-09,
+        "B_prob": 2.723838932183753e-09,
+        "C_prob": 1.072415378722269e-09,
+        "D_prob": 1.372105068453422e-10
+      },
+      {
+        "step_idx": 9,
+        "generated_token": " ]",
+        "A_prob": 4.339788084450902e-09,
+        "B_prob": 7.40890890305046e-11,
+        "C_prob": 2.486896522047033e-10,
+        "D_prob": 2.9532629119977116e-10
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " Not",
+        "A_prob": 1.0522170912352635e-09,
+        "B_prob": 2.1713728037831004e-10,
+        "C_prob": 5.374198863705715e-10,
+        "D_prob": 3.416048832693974e-10
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " wrong",
+        "A_prob": 3.0769087278059715e-09,
+        "B_prob": 1.4421180916102116e-09,
+        "C_prob": 4.339136605580052e-09,
+        "D_prob": 3.3793228215728277e-09
+      },
+      {
+        "step_idx": 12,
+        "generated_token": ",",
+        "A_prob": 2.3165421580984003e-08,
+        "B_prob": 4.260772712427752e-08,
+        "C_prob": 2.2104599040062567e-08,
+        "D_prob": 4.6795435082458425e-08
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " Wrong",
+        "A_prob": 3.826169603371454e-09,
+        "B_prob": 7.07770231311855e-10,
+        "C_prob": 1.594984810893152e-09,
+        "D_prob": 3.172005991203264e-09
+      },
+      {
+        "step_idx": 14,
+        "generated_token": "\n",
+        "A_prob": 5.418143711466428e-09,
+        "B_prob": 2.5593498431675243e-09,
+        "C_prob": 7.761132181371977e-09,
+        "D_prob": 8.794514450016777e-09
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "[",
+        "A_prob": 2.8489504089179718e-08,
+        "B_prob": 1.1829890844694546e-08,
+        "C_prob": 3.8788719791682524e-08,
+        "D_prob": 2.413515005628142e-07
+      },
+      {
+        "step_idx": 16,
+        "generated_token": " D",
+        "A_prob": 9.432819858545827e-09,
+        "B_prob": 1.0041184772546785e-08,
+        "C_prob": 5.588761453623192e-09,
+        "D_prob": 6.382565587159661e-09
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " ]",
+        "A_prob": 4.4388922759708294e-08,
+        "B_prob": 6.6886483018890885e-09,
+        "C_prob": 1.3858896252827435e-08,
+        "D_prob": 1.3967593304187176e-08
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " Not",
+        "A_prob": 1.6656407808568474e-08,
+        "B_prob": 1.0081403489792251e-09,
+        "C_prob": 4.146726340081841e-08,
+        "D_prob": 9.179221827082529e-10
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " wrong",
+        "A_prob": 2.363303719388199e-10,
+        "B_prob": 8.970089948601156e-11,
+        "C_prob": 2.2422401713129148e-09,
+        "D_prob": 3.130868897471828e-10
+      }
+    ]
+  },
+  {
+    "question_id": 13,
+    "prompt_text": "Inviduals suffering from inhalant allergies may also react to cross- reacting food allergens. A person suffering from a natural latex allergy might not react to one of the following allergens\n\n\n[ A ] avocado\n[ B ] mango\n[ C ] peach\n[ D ] figs\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: Inviduals suffering from inhalant allergies may also react to cross- reacting food allergens. A person suffering from a natural latex allergy might not react to one of the following allergens\n\n\n[ A ] avocado\n[ B ] mango\n[ C ] peach\n[ D ] figs\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: To determine which allergen a person with a natural latex allergy would not react to, I need to",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": ":",
+        "A_prob": 2.205261084853305e-09,
+        "B_prob": 3.435134121598793e-10,
+        "C_prob": 3.544176896408402e-10,
+        "D_prob": 3.544176896408402e-10
+      },
+      {
+        "step_idx": 1,
+        "generated_token": " In",
+        "A_prob": 3.976050044762758e-11,
+        "B_prob": 7.923960931854879e-10,
+        "C_prob": 2.2004044419876578e-10,
+        "D_prob": 8.470554746509151e-08
+      },
+      {
+        "step_idx": 2,
+        "generated_token": "vid",
+        "A_prob": 5.435038530343661e-10,
+        "B_prob": 2.5673305148465886e-10,
+        "C_prob": 7.35552521669014e-11,
+        "D_prob": 5.552241652551082e-11
+      },
+      {
+        "step_idx": 3,
+        "generated_token": "ual",
+        "A_prob": 1.3419513500423363e-08,
+        "B_prob": 3.242838175765428e-08,
+        "C_prob": 1.2129442339414709e-08,
+        "D_prob": 3.046364938086299e-08
+      },
+      {
+        "step_idx": 4,
+        "generated_token": "s",
+        "A_prob": 4.3060753530596574e-13,
+        "B_prob": 1.669646612265617e-14,
+        "C_prob": 1.669646612265617e-14,
+        "D_prob": 6.603579987517205e-14
+      },
+      {
+        "step_idx": 5,
+        "generated_token": " suffering",
+        "A_prob": 2.6911116890460107e-08,
+        "B_prob": 5.056449037255106e-09,
+        "C_prob": 1.0516412185523905e-09,
+        "D_prob": 2.8810778207599697e-09
+      },
+      {
+        "step_idx": 6,
+        "generated_token": " from",
+        "A_prob": 1.3499822093532288e-10,
+        "B_prob": 1.553819989341676e-10,
+        "C_prob": 2.4636742645967047e-10,
+        "D_prob": 1.1820838752285567e-10
+      },
+      {
+        "step_idx": 7,
+        "generated_token": " inhal",
+        "A_prob": 1.143093730782141e-09,
+        "B_prob": 7.322932815689853e-10,
+        "C_prob": 1.1702013802405986e-09,
+        "D_prob": 1.6792622847816574e-10
+      },
+      {
+        "step_idx": 8,
+        "generated_token": "ant",
+        "A_prob": 9.863632133289002e-11,
+        "B_prob": 5.447214207476847e-11,
+        "C_prob": 3.524387726105971e-10,
+        "D_prob": 6.381841721747605e-10
+      },
+      {
+        "step_idx": 9,
+        "generated_token": " allergies",
+        "A_prob": 2.128114628963118e-10,
+        "B_prob": 8.769256432117345e-10,
+        "C_prob": 5.476952780192335e-10,
+        "D_prob": 1.6066249441948344e-09
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " may",
+        "A_prob": 2.778484553545013e-09,
+        "B_prob": 4.965291733327604e-09,
+        "C_prob": 1.6017941417700854e-09,
+        "D_prob": 3.3646094799166804e-09
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " also",
+        "A_prob": 3.4033839635405627e-10,
+        "B_prob": 2.0682923429493627e-10,
+        "C_prob": 1.1155934682982593e-11,
+        "D_prob": 8.390615424680448e-10
+      },
+      {
+        "step_idx": 12,
+        "generated_token": " react",
+        "A_prob": 4.3223863377406246e-10,
+        "B_prob": 4.3223863377406246e-10,
+        "C_prob": 2.178006663910992e-09,
+        "D_prob": 6.302270705305091e-09
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " to",
+        "A_prob": 7.365387813540458e-12,
+        "B_prob": 1.880817897259579e-11,
+        "C_prob": 1.2753033351575738e-10,
+        "D_prob": 1.6895025656271656e-10
+      },
+      {
+        "step_idx": 14,
+        "generated_token": " cross",
+        "A_prob": 2.2741929867065025e-11,
+        "B_prob": 1.8025520312492382e-11,
+        "C_prob": 1.243909142356614e-10,
+        "D_prob": 3.2264546589999554e-10
+      },
+      {
+        "step_idx": 15,
+        "generated_token": "-",
+        "A_prob": 3.833942191500128e-11,
+        "B_prob": 1.5670784982158015e-12,
+        "C_prob": 3.774502585485173e-11,
+        "D_prob": 3.260672287730415e-10
+      },
+      {
+        "step_idx": 16,
+        "generated_token": " reacting",
+        "A_prob": 4.217397542305434e-09,
+        "B_prob": 1.661014242815284e-10,
+        "C_prob": 1.7137403995892697e-10,
+        "D_prob": 6.884712244747959e-10
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " food",
+        "A_prob": 1.6450811199386628e-11,
+        "B_prob": 1.0538784254998657e-11,
+        "C_prob": 6.980371836107224e-11,
+        "D_prob": 2.356469880337997e-11
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " allerg",
+        "A_prob": 1.5724586563403697e-11,
+        "B_prob": 9.773157109982389e-12,
+        "C_prob": 8.987228322654417e-11,
+        "D_prob": 6.94479196372555e-11
+      },
+      {
+        "step_idx": 19,
+        "generated_token": "ens",
+        "A_prob": 1.254528685795675e-11,
+        "B_prob": 2.068059482343565e-12,
+        "C_prob": 7.2606547510400965e-12,
+        "D_prob": 4.018153518248191e-11
+      }
+    ]
+  },
+  {
+    "question_id": 14,
+    "prompt_text": "A psychologist is the supervisor of several interns at a community hospital in a small town and notices that one of the interns seems unenthusiastic and depressed. When he talks to her, she tells him that she\u2019s been very unhappy lately and feels she has no one to turn to. The intern asks the psychologist to see her in therapy, and he agrees to do so. The psychologist has acted:\n\n[ A ] unethically by agreeing to get involved in a dual relationship.\n[ B ] unethically by violating the intern''s right to privacy.\n[ C ] ethically because they are working in a community hospital in a small town.\n[ D ] ethically because the intern is in desperate need of help.\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])",
+    "completion_text": "User: A psychologist is the supervisor of several interns at a community hospital in a small town and notices that one of the interns seems unenthusiastic and depressed. When he talks to her, she tells him that she\u2019s been very unhappy lately and feels she has no one to turn to. The intern asks the psychologist to see her in therapy, and he agrees to do so. The psychologist has acted:\n\n[ A ] unethically by agreeing to get involved in a dual relationship.\n[ B ] unethically by violating the intern''s right to privacy.\n[ C ] ethically because they are working in a community hospital in a small town.\n[ D ] ethically because the intern is in desperate need of help.\n\nPlease answer with the letter of the correct option (eg [ A ], [ B ], [ C ], [ D ])\nAssistant: The psychologist agreed to see the intern in therapy, which is a dual relationship. This could be considered",
+    "token_probs": [
+      {
+        "step_idx": 0,
+        "generated_token": " The",
+        "A_prob": 3.392818914704776e-09,
+        "B_prob": 1.3080482252902925e-09,
+        "C_prob": 1.5055542368358488e-09,
+        "D_prob": 4.841040901482074e-09
+      },
+      {
+        "step_idx": 1,
+        "generated_token": " psychologist",
+        "A_prob": 4.41030942965881e-06,
+        "B_prob": 2.488126256139367e-07,
+        "C_prob": 1.1000634003721643e-07,
+        "D_prob": 4.1668275230222207e-07
+      },
+      {
+        "step_idx": 2,
+        "generated_token": " agreed",
+        "A_prob": 1.7852629753178917e-05,
+        "B_prob": 8.664169826033685e-08,
+        "C_prob": 1.0288955820669798e-07,
+        "D_prob": 1.9525006678122736e-07
+      },
+      {
+        "step_idx": 3,
+        "generated_token": " to",
+        "A_prob": 5.243672163146584e-10,
+        "B_prob": 1.346686373526751e-10,
+        "C_prob": 5.243672163146584e-10,
+        "D_prob": 3.8064978946650285e-10
+      },
+      {
+        "step_idx": 4,
+        "generated_token": " see",
+        "A_prob": 2.770885316749627e-07,
+        "B_prob": 1.867286592016626e-08,
+        "C_prob": 9.725271254978907e-09,
+        "D_prob": 2.5320381347171406e-09
+      },
+      {
+        "step_idx": 5,
+        "generated_token": " the",
+        "A_prob": 8.784940552786225e-10,
+        "B_prob": 1.3057649406178484e-10,
+        "C_prob": 3.1816946299834115e-10,
+        "D_prob": 9.351519558720156e-10
+      },
+      {
+        "step_idx": 6,
+        "generated_token": " intern",
+        "A_prob": 2.2723032344629246e-08,
+        "B_prob": 3.65192343032561e-09,
+        "C_prob": 5.568518535170597e-09,
+        "D_prob": 8.692333963722376e-09
+      },
+      {
+        "step_idx": 7,
+        "generated_token": " in",
+        "A_prob": 4.668349617986678e-08,
+        "B_prob": 2.84771140002249e-09,
+        "C_prob": 7.862783313328237e-09,
+        "D_prob": 3.25903322107024e-08
+      },
+      {
+        "step_idx": 8,
+        "generated_token": " therapy",
+        "A_prob": 8.347693203347717e-09,
+        "B_prob": 2.0179120596708344e-09,
+        "C_prob": 1.0612900558371052e-09,
+        "D_prob": 6.893499548965565e-09
+      },
+      {
+        "step_idx": 9,
+        "generated_token": ",",
+        "A_prob": 2.8359365966679206e-09,
+        "B_prob": 8.785321914395183e-10,
+        "C_prob": 6.133143437558886e-10,
+        "D_prob": 1.1572391933611925e-08
+      },
+      {
+        "step_idx": 10,
+        "generated_token": " which",
+        "A_prob": 1.176874775410397e-08,
+        "B_prob": 8.360358516590338e-10,
+        "C_prob": 1.9362633718600364e-09,
+        "D_prob": 3.589265107351025e-09
+      },
+      {
+        "step_idx": 11,
+        "generated_token": " is",
+        "A_prob": 1.1153171186606414e-07,
+        "B_prob": 8.40117397871154e-09,
+        "C_prob": 9.594442573757078e-09,
+        "D_prob": 3.245757795866666e-08
+      },
+      {
+        "step_idx": 12,
+        "generated_token": " a",
+        "A_prob": 8.63637339421075e-08,
+        "B_prob": 8.891807290467568e-09,
+        "C_prob": 7.877704710779199e-09,
+        "D_prob": 2.9846507487718554e-08
+      },
+      {
+        "step_idx": 13,
+        "generated_token": " dual",
+        "A_prob": 3.939874204661464e-09,
+        "B_prob": 4.193974056931893e-09,
+        "C_prob": 3.068377329995542e-09,
+        "D_prob": 1.3538315357664032e-08
+      },
+      {
+        "step_idx": 14,
+        "generated_token": " relationship",
+        "A_prob": 1.5377418227657813e-09,
+        "B_prob": 7.451683714521096e-09,
+        "C_prob": 2.4960014055608326e-09,
+        "D_prob": 8.492216929667507e-10
+      },
+      {
+        "step_idx": 15,
+        "generated_token": ".",
+        "A_prob": 2.191455461542091e-09,
+        "B_prob": 1.035015753658719e-10,
+        "C_prob": 1.7067073310172987e-09,
+        "D_prob": 9.206995166266552e-10
+      },
+      {
+        "step_idx": 16,
+        "generated_token": " This",
+        "A_prob": 1.9354253311121283e-08,
+        "B_prob": 1.074964117719901e-09,
+        "C_prob": 3.9545716701283595e-10,
+        "D_prob": 1.6141939340741374e-07
+      },
+      {
+        "step_idx": 17,
+        "generated_token": " could",
+        "A_prob": 1.2907743318635312e-08,
+        "B_prob": 1.6997540042140713e-09,
+        "C_prob": 4.181729407193302e-10,
+        "D_prob": 4.174193435346751e-09
+      },
+      {
+        "step_idx": 18,
+        "generated_token": " be",
+        "A_prob": 2.110787811204773e-08,
+        "B_prob": 1.805452320979839e-08,
+        "C_prob": 5.63689717125726e-09,
+        "D_prob": 7.1257053591011754e-09
+      },
+      {
+        "step_idx": 19,
+        "generated_token": " considered",
+        "A_prob": 4.8177572153917936e-08,
+        "B_prob": 4.2097090258153e-09,
+        "C_prob": 1.1154619450337577e-09,
+        "D_prob": 1.3965812506455677e-08
+      }
+    ]
+  }
+]
