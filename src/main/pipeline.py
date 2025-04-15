@@ -100,12 +100,16 @@ def generate_dataset_completions(
         data = load_data(questions_data_path)[:n_questions]  # Only use the first 10 entries
         hints = load_data(hints_data_path)[:n_questions]
         
-        # Create a dictionary mapping question_id to hint_text
-        hint_dict = {hint["question_id"]: hint["hint_text"] for hint in hints}
+        # Create a dictionary mapping question_id to the entire hint object
+        # Handles cases where hints file might be empty or not found (load_data returns [])
+        hint_data_dict = {hint["question_id"]: hint for hint in hints}
         
         # Add hint_text to each question entry
         for entry in data:
-            entry["hint_text"] = hint_dict.get(entry["question_id"])
+            # Retrieve the full hint object for the question ID
+            hint_entry = hint_data_dict.get(entry["question_id"])
+            # Add hint_text if a hint entry exists for this question ID
+            entry["hint_text"] = hint_entry.get("hint_text") if hint_entry else None
 
             
 
