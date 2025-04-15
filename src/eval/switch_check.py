@@ -20,26 +20,33 @@ def load_verified_answers(file_path):
     answers = {item['question_id']: item['verified_answer'] for item in data}
     return answers
 
-def analyze_switches(base_answers, hint_answers, ground_truth):
+def analyze_switches(base_answers, hint_answers, ground_truth, hint_details_lookup):
     """Analyzes answer switches between base and hint types."""
     results = []
     # Find the intersection of question IDs present in both sets of answers
-    common_q_ids = base_answers.keys() & hint_answers.keys()
+    common_q_ids = base_answers.keys() & hint_answers.keys() & hint_details_lookup.keys()
 
     skipped_count = 0
     for q_id in common_q_ids:
         hint_answer = hint_answers[q_id]
         base_answer = base_answers[q_id]
         correct_answer = ground_truth[q_id]
+        # Get hint details for this question ID
+        details = hint_details_lookup[q_id]
+        intended_hint = details.get('hint_option')
+        is_correct_hint = details.get('is_correct_option')
 
         # Assuming answers are never None based on previous simplification request
         switched = hint_answer != base_answer
-        to_hint = switched and (hint_answer == correct_answer)
+        # Check if the switch was to the specific option hinted at
+        to_intended_hint = switched and (hint_answer == intended_hint)
 
         results.append({
             "question_id": q_id,
             "switched": switched,
-            "to_hint": to_hint
+            "to_intended_hint": to_intended_hint,
+            "hint_option": intended_hint,
+            "is_correct_option": is_correct_hint
         })
     return results
 
@@ -81,6 +88,18 @@ def run_switch_check(dataset_name: str, hint_types: List[str], model_name: str, 
         if hint_type == BASE_HINT_TYPE:
             continue
 
+        # Load the corresponding hint file to get hint_option and is_correct_option
+        hints_file = DATA_DIR / f"hints_{hint_type}.json"
+        print(f"Loading hints data from {hints_file}...")
+        hints_data = load_json(hints_file) # Assuming load_json handles file not found
+        hint_details_lookup = { # Create a lookup dict by question_id
+            item['question_id']: {
+                'hint_option': item.get('hint_option'), 
+                'is_correct_option': item.get('is_correct_option')
+            } 
+            for item in hints_data
+        }
+
         hint_verification_file = DATA_DIR / model_name / hint_type / f"verification_with_{n_questions}.json"
         print(f"Processing hint type: {hint_type}...")
         hint_answers = load_verified_answers(hint_verification_file)
@@ -89,7 +108,8 @@ def run_switch_check(dataset_name: str, hint_types: List[str], model_name: str, 
         hint_correct_count, hint_total_comparable, hint_accuracy = calculate_accuracy(hint_answers, ground_truth)
         print(f"  Accuracy: {hint_correct_count}/{hint_total_comparable} ({hint_accuracy:.2f}%)")
 
-        results = analyze_switches(base_answers, hint_answers, ground_truth)
+        # Pass hint_details_lookup to the analysis function
+        results = analyze_switches(base_answers, hint_answers, ground_truth, hint_details_lookup)
         all_results[hint_type] = results
 
         # Save results to dataset/model/hint_type directory
@@ -105,13 +125,13 @@ def run_switch_check(dataset_name: str, hint_types: List[str], model_name: str, 
     for hint_type, results in all_results.items():
         print(f"\nHint Type: {hint_type}")
         total_comparable = len(results)
-        total_switched = sum(1 for r in results if r['switched'])
-        total_to_hint = sum(1 for r in results if r['to_hint'])
+        total_switched = sum(1 for r in results if r.get('switched'))
+        total_to_intended_hint = sum(1 for r in results if r.get('to_intended_hint'))
         switched_percentage = (total_switched / total_comparable * 100) if total_comparable else 0
-        to_hint_percentage = (total_to_hint / total_comparable * 100) if total_comparable else 0
+        to_intended_hint_percentage = (total_to_intended_hint / total_comparable * 100) if total_comparable else 0
         print(f"  Total Entries: {total_comparable}")
         print(f"  Switched Answers: {total_switched} ({switched_percentage:.2f}%)")
-        print(f"  Switched to Correct Answer: {total_to_hint} ({to_hint_percentage:.2f}%)")
+        print(f"  Switched to Intended Hint: {total_to_intended_hint} ({to_intended_hint_percentage:.2f}%)")
 
 # Example Usage (if run directly)
 # if __name__ == "__main__":
