@@ -6,7 +6,7 @@ import logging
 from tqdm import tqdm
 
 from .io import load_hint_verification_data, load_mcq_data, load_completion
-from .logit_extraction import get_option_token_ids, find_reasoning_end, extract_logprobs_sequence
+from .logit_extraction import get_option_token_ids, find_reasoning_end, extract_logprobs_sequence, find_reasoning_start
 from .utils import get_intervention_prompt
 
 def run_logprobs_analysis_for_hint_types(
@@ -91,7 +91,10 @@ def run_logprobs_analysis_for_hint_types(
             continue # Skip this qid for baseline
         
         try:
+            reasoning_start = find_reasoning_start(completion, model_name)
             reasoning_end = find_reasoning_end(completion, model_name)
+            
+
             for intervention_type in intervention_types:
                 prompt = get_intervention_prompt(intervention_type)
                 if not prompt:
@@ -99,6 +102,7 @@ def run_logprobs_analysis_for_hint_types(
                 
                 sequence = extract_logprobs_sequence(
                     completion_text=completion,
+                    reasoning_start_index=reasoning_start,
                     reasoning_end_index=reasoning_end,
                     option_token_ids=standard_option_token_ids,
                     intervention_prompt=prompt,
@@ -167,14 +171,22 @@ def run_logprobs_analysis_for_hint_types(
                 continue
             
             try:
+                reasoning_start = find_reasoning_start(completion, model_name)
                 reasoning_end = find_reasoning_end(completion, model_name)
+
+                if reasoning_end <= reasoning_start:
+                    logging.warning(f"Invalid reasoning boundaries for hint '{hint_type}' QID {qid} (Start: {reasoning_start}, End: {reasoning_end}). Skipping.")
+                    hinted_results[qid]["error"] = "Invalid reasoning boundaries"
+                    continue
+
                 for intervention_type in intervention_types:
-                    prompt = get_intervention_prompt(intervention_type)
+                    prompt = get_intervention_prompt(intervention_type, tokenizer)
                     if not prompt:
                          raise ValueError(f"Could not generate prompt for type {intervention_type}.")
 
                     sequence = extract_logprobs_sequence(
                         completion_text=completion,
+                        reasoning_start_index=reasoning_start,
                         reasoning_end_index=reasoning_end,
                         option_token_ids=standard_option_token_ids,
                         intervention_prompt=prompt,
