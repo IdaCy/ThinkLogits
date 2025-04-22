@@ -180,7 +180,7 @@ def run_logprobs_analysis_for_hint_types(
                     continue
 
                 for intervention_type in intervention_types:
-                    prompt = get_intervention_prompt(intervention_type, tokenizer)
+                    prompt = get_intervention_prompt(intervention_type)
                     if not prompt:
                          raise ValueError(f"Could not generate prompt for type {intervention_type}.")
 

@@ -145,7 +145,6 @@ def extract_logprobs_sequence(
     prompt_context_tokens = tokenizer.encode(prompt_context_text, return_tensors="pt", add_special_tokens=False).to(device)
     # Note: Check if BOS token is needed. If the original input had BOS, encode might need add_special_tokens=True for this part?
     # Or maybe the model call handles it? Let's assume False is okay for now.
-    logging.debug(f"Prompt context tokens shape: {prompt_context_tokens.shape}")
 
     # 2. Reasoning Part
     reasoning_text = completion_text[reasoning_start_index:reasoning_end_index]
@@ -157,11 +156,9 @@ def extract_logprobs_sequence(
     if total_reasoning_tokens == 0:
         logging.warning("Reasoning text tokenized to zero tokens. Returning empty list.")
         return logprobs_sequence
-    logging.debug(f"All reasoning tokens shape: {all_reasoning_tokens.shape}")
 
     # 3. Intervention Prompt
     intervention_tokens = tokenizer.encode(intervention_prompt, return_tensors="pt", add_special_tokens=False).to(device)
-    logging.debug(f"Intervention tokens shape: {intervention_tokens.shape}")
     # --- End Tokenization --- 
 
     # Ensure percentage steps are sorted and unique
