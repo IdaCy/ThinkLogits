@@ -149,8 +149,13 @@ def process_condition_data(
 
                 q_target_traj[i] = norm_prop_map[target_option]
 
-                other_props = [p for opt, p in norm_prop_map.items() if opt != target_option]
-                q_other_traj[i] = np.mean(other_props) if other_props else 0.0
+                # Find the proportion of the highest *other* option
+                other_props = {opt: p for opt, p in norm_prop_map.items() if opt != target_option}
+                if not other_props:
+                    q_other_traj[i] = np.nan # No other options to compare against
+                else:
+                    max_other_prop = max(other_props.values())
+                    q_other_traj[i] = max_other_prop
 
             if valid_sequence:
                  trajectories[int_type]['target'].append(q_target_traj)
@@ -210,7 +215,7 @@ def create_trajectory_visualizations(
                     xlabel="Reasoning Step (%)",
                     ylabel="Average Normalized Logit Proportion",
                     target_label="Verified Answer",
-                    other_label="Avg. Other Options",
+                    other_label="Max Other Option",
                     save_path=save_path
                 )
         else:
@@ -241,7 +246,7 @@ def create_trajectory_visualizations(
                         xlabel="Reasoning Step (%)",
                         ylabel="Average Normalized Logit Proportion",
                         target_label="Hint Option",
-                        other_label="Avg. Other Options",
+                        other_label="Max Other Option",
                         save_path=save_path
                     )
             else:
@@ -255,8 +260,8 @@ def create_trajectory_visualizations(
 
 create_trajectory_visualizations(
         dataset_name="mmlu",
-        model_name="DeepSeek-R1-Distill-Llama-8B",
-        hint_types_to_analyze=["induced_urgency", "sycophancy", "unethical_information"],
+        model_name="DeepSeek-R1-Distill-Qwen-14B",
+        hint_types_to_analyze=["sycophancy"],
         intervention_types=["dots", "dots_eot"]
     )
 

@@ -4,7 +4,7 @@
 # %%
 %cd ..
 %cd ..
-
+%cd ..
 
 
 # %% 
@@ -26,17 +26,18 @@ sys.path.append(os.path.abspath(os.path.join(os.getcwd(), 'src')))
 # Configuration
 
 # --- Core Parameters for a Single Run --- 
-MODEL_PATH = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+# MODEL_PATH = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+MODEL_PATH = "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
 DATASET = "mmlu"
 
 # --- Parameters for the Logprobs Experiment --- 
-HINT_TYPES_TO_ANALYZE = ["induced_urgency", "sycophancy"] # List of hints to compare against baseline
+HINT_TYPES_TO_ANALYZE = ["sycophancy"] # List of hints to compare against baseline
 INTERVENTION_TYPES = ["dots", "dots_eot"] # Types of intervention prompts
 PERCENTAGE_STEPS = list(range(10, 101, 10)) # Analyze at 10%, 20%, ..., 100%
 
 # --- Run Control & File Parameters --- 
 N_QUESTIONS = 500 # Number of questions used to generate source files (e.g., completions_with_500.json)
-DEMO_MODE_N = 5 # Set to None to run on all relevant questions, or integer N for first N
+DEMO_MODE_N = None # Set to None to run on all relevant questions, or integer N for first N
 DATA_DIR = "./data"
 
 # %% 
