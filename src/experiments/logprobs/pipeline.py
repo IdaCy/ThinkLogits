@@ -21,7 +21,7 @@ def run_logprobs_analysis_for_hint_types(
     percentage_steps: list[int],
     n_questions: int,
     demo_mode_n: int | None = None,
-    output_dir_base: str | None = None # Base directory for saving results
+    # output_dir_base: str | None = None # Base directory for saving results - REMOVED
 ):
     """Runs the logit extraction analysis for a model/dataset across specified hint types.
 
@@ -143,10 +143,8 @@ def run_logprobs_analysis_for_hint_types(
             baseline_results[qid]["error"] = str(e) 
 
     # --- 4. Save Baseline Results --- 
-    # Define output directory if not provided
-    if output_dir_base is None:
-        output_dir_base = os.path.join(data_dir, dataset, model_name)
-    logprobs_output_dir = os.path.join(output_dir_base, "logprobs_analysis")
+    # Define output directory directly
+    logprobs_output_dir = os.path.join("src", "experiments", "logprobs", "results", dataset, model_name)
     os.makedirs(logprobs_output_dir, exist_ok=True)
     
     baseline_output_filename = os.path.join(logprobs_output_dir, "baseline_logprobs.json")

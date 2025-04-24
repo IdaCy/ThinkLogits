@@ -79,8 +79,8 @@ if model and tokenizer:
         intervention_types=INTERVENTION_TYPES,
         percentage_steps=PERCENTAGE_STEPS,
         n_questions=N_QUESTIONS,
-        demo_mode_n=DEMO_MODE_N,
-        output_dir_base=output_dir_base
+        demo_mode_n=DEMO_MODE_N
+        # output_dir_base=output_dir_base
     )
 else:
     logging.error("Pipeline execution skipped due to model/tokenizer loading failure.")
