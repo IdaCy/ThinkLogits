@@ -5,7 +5,7 @@ import json
 import logging
 from tqdm import tqdm
 
-from .io import load_hint_verification_data, load_mcq_data, load_completion
+from .io import load_hint_verification_data, load_mcq_data, load_completion, load_switch_analysis_data, load_verification_data
 from .logit_extraction import get_option_token_ids, find_reasoning_end, extract_logprobs_sequence, find_reasoning_start
 from .utils import get_intervention_prompt
 
@@ -21,7 +21,7 @@ def run_logprobs_analysis_for_hint_types(
     percentage_steps: list[int],
     n_questions: int,
     demo_mode_n: int | None = None,
-    output_dir_base: str | None = None # Base directory for saving results
+    # output_dir_base: str | None = None # Base directory for saving results - REMOVED
 ):
     """Runs the logit extraction analysis for a model/dataset across specified hint types.
 
@@ -42,13 +42,21 @@ def run_logprobs_analysis_for_hint_types(
     # --- 2. Determine Relevant QIDs & Standard Options --- 
     all_relevant_qids = set()
     all_hint_verification_data = {}
+    all_switch_analysis_data = {} # Store switch analysis data per hint type
     for ht in hint_types_to_analyze:
         logging.info(f"Loading hint verification data for hint type: {ht}")
         verification_data = load_hint_verification_data(
             data_dir=data_dir, dataset=dataset, model_name=model_name, 
             hint_type=ht, n_questions=n_questions
         )
+        # Load switch analysis data for this hint type
+        logging.info(f"Loading switch analysis data for hint type: {ht}")
+        switch_data = load_switch_analysis_data(
+            data_dir=data_dir, dataset=dataset, model_name=model_name,
+            hint_type=ht, n_questions=n_questions
+        )
         all_hint_verification_data[ht] = verification_data
+        all_switch_analysis_data[ht] = switch_data # Store it
         qids_for_hint = set(verification_data.keys())
         logging.info(f"  Found {len(qids_for_hint)} questions that switched to hint '{ht}'.")
         all_relevant_qids.update(qids_for_hint)
@@ -83,8 +91,22 @@ def run_logprobs_analysis_for_hint_types(
     # --- 3. Process Baseline ("none") --- 
     baseline_results = {}
     logging.info(f"Processing baseline ('none') completions for {len(qids_to_process_final)} relevant questions...")
+    
+    # Load baseline verification data specifically for baseline processing
+    logging.info("Loading baseline (none) verification data...")
+    baseline_verification_map = load_verification_data(
+        data_dir=data_dir, dataset=dataset, model_name=model_name, hint_type="none", n_questions=n_questions
+    )
+    logging.info(f"Loaded baseline verification data for {len(baseline_verification_map)} questions.")
+
     for qid in tqdm(qids_to_process_final, desc="Processing Baseline"):
-        baseline_results[qid] = {}
+        # Get verified answer from the baseline map
+        baseline_verif_info = baseline_verification_map.get(qid, {})
+        verified_answer = baseline_verif_info.get("verified_answer")
+
+        baseline_results[qid] = {
+            "verified_answer": verified_answer
+        }
         completion = load_completion(data_dir, dataset, model_name, "none", n_questions, qid)
         if not completion:
             logging.warning(f"Baseline completion not found for QID {qid}. Skipping baseline processing for this QID.")
@@ -117,13 +139,12 @@ def run_logprobs_analysis_for_hint_types(
         except Exception as e:
             logging.error(f"Error processing baseline for QID {qid}: {e}", exc_info=True)
             # Mark as failed or remove partial results?
-            baseline_results[qid] = {"error": str(e)} 
+            # Keep verified_answer if already added
+            baseline_results[qid]["error"] = str(e) 
 
     # --- 4. Save Baseline Results --- 
-    # Define output directory if not provided
-    if output_dir_base is None:
-        output_dir_base = os.path.join(data_dir, dataset, model_name)
-    logprobs_output_dir = os.path.join(output_dir_base, "logprobs_analysis")
+    # Define output directory directly
+    logprobs_output_dir = os.path.join("src", "experiments", "logprobs", "results", dataset, model_name)
     os.makedirs(logprobs_output_dir, exist_ok=True)
     
     baseline_output_filename = os.path.join(logprobs_output_dir, "baseline_logprobs.json")
@@ -150,6 +171,14 @@ def run_logprobs_analysis_for_hint_types(
         logging.info(f"--- Processing Hint Type: {hint_type} ---")
         hinted_results = {}
         hint_verification_data = all_hint_verification_data.get(hint_type, {})
+        switch_analysis_data = all_switch_analysis_data.get(hint_type, {}) # Get switch data
+
+        # Load verification data for the *current* hint type
+        logging.info(f"Loading verification data for hint type: {hint_type}...")
+        current_verification_map = load_verification_data(
+            data_dir=data_dir, dataset=dataset, model_name=model_name, hint_type=hint_type, n_questions=n_questions
+        )
+        logging.info(f"Loaded verification data for {len(current_verification_map)} questions for hint {hint_type}.")
         
         # Process only the QIDs relevant to *this* hint type and also in the final processing list
         qids_for_this_hint = [qid for qid in qids_to_process_final if qid in hint_verification_data]
@@ -160,9 +189,31 @@ def run_logprobs_analysis_for_hint_types(
 
         logging.info(f"Processing {len(qids_for_this_hint)} questions for hint type: {hint_type}")
         for qid in tqdm(qids_for_this_hint, desc=f"Processing {hint_type}"):
-            verbalizes = hint_verification_data[qid]
+            # Retrieve verification and switch info safely
+            verification_info = hint_verification_data.get(qid, {})
+            switch_info = switch_analysis_data.get(qid, {})
+
+            # Determine status and other fields (from hint_verification_with_N.json)
+            verbalizes = verification_info.get("verbalizes_hint", False)
             status = "verbalized" if verbalizes else "non_verbalized"
-            hinted_results[qid] = { "status": status }
+            depends_on_hint = verification_info.get("depends_on_hint")
+            quartiles = verification_info.get("quartiles")
+            hint_option = switch_info.get("hint_option") # From switch_analysis
+            is_correct_option = switch_info.get("is_correct_option") # From switch_analysis
+
+            # Get verified answer from the hint-specific verification map (verification_with_N.json)
+            current_verif_info = current_verification_map.get(qid, {})
+            verified_answer = current_verif_info.get("verified_answer")
+
+            # Initialize hinted_results with all metadata fields
+            hinted_results[qid] = {
+                "status": status,
+                "depends_on_hint": depends_on_hint,
+                "quartiles": quartiles,
+                "hint_option": hint_option,
+                "is_correct_option": is_correct_option,
+                "verified_answer": verified_answer # Add the verified answer here
+            }
 
             completion = load_completion(data_dir, dataset, model_name, hint_type, n_questions, qid)
             if not completion:
@@ -194,12 +245,14 @@ def run_logprobs_analysis_for_hint_types(
                         model=model, tokenizer=tokenizer, device=device
                     )
                     reasoning_tokens = sequence[-1]["token_index"] if sequence else 0
+                    # Add the logprobs results under the intervention type key
                     hinted_results[qid][intervention_type] = {
                         "reasoning_tokens": reasoning_tokens,
                         "logprobs_sequence": sequence
                     }
             except Exception as e:
                  logging.error(f"Error processing hint '{hint_type}' for QID {qid}: {e}", exc_info=True)
+                 # Add error message, preserving existing metadata
                  hinted_results[qid]["error"] = str(e)
 
         # --- Save Results for This Hint Type --- 
