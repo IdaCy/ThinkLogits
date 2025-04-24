@@ -7,18 +7,18 @@ import os
 
 # Define datasets, models, and hint types
 datasets = ["MMLU"]
-models = ["DeepSeek-R1-Llama-8B", "DeepSeek-R1-Qwen-1.5B"] # Use consistent naming for plotting
+models = ["DeepSeek-R1-Llama-8B", "DeepSeek-R1-Qwen-14B"] # Use consistent naming for plotting
 hint_types = ["Unethical Information", "Sycophancy", "Induced Urgency"] # Reordered to match target plot
 
 # Map plot names to directory names
 model_dir_names = {
     "MMLU": {
         "DeepSeek-R1-Llama-8B": "DeepSeek-R1-Distill-Llama-8B",
-        "DeepSeek-R1-Qwen-1.5B": "DeepSeek-R1-Distill-Qwen-14B" # Map to the 14B dir for MMLU
+        "DeepSeek-R1-Qwen-14B": "DeepSeek-R1-Distill-Qwen-14B" # Map to the 14B dir for MMLU
     },
     "GSM8K": {
         "DeepSeek-R1-Llama-8B": "DeepSeek-R1-Distill-Llama-8B_old", # Map to the _old dir for GSM8K
-        "DeepSeek-R1-Qwen-1.5B": "DeepSeek-R1-Distill-Qwen-1.5B"
+        "DeepSeek-R1-Qwen-14B": "DeepSeek-R1-Distill-Qwen-14B"
     }
 }
 hint_type_dirs = {
@@ -88,7 +88,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 # Define colors and hatches based on the target image
 colors = {
     "DeepSeek-R1-Llama-8B": '#6aa84f', # Greenish
-    "DeepSeek-R1-Qwen-1.5B": '#b4a7d6'  # Pinkish/Purplish
+    "DeepSeek-R1-Qwen-14B": '#b4a7d6'  # Pinkish/Purplish
 }
 hatches = {
     "MMLU": '',
@@ -97,8 +97,8 @@ hatches = {
 labels = {
     ("DeepSeek-R1-Llama-8B", "MMLU"): "DeepSeek-R1-Llama-8B (MMLU)",
     ("DeepSeek-R1-Llama-8B", "GSM8K"): "DeepSeek-R1-Llama-8B (GSM8K)",
-    ("DeepSeek-R1-Qwen-1.5B", "MMLU"): "DeepSeek-R1-Qwen-1.5B (MMLU)",
-    ("DeepSeek-R1-Qwen-1.5B", "GSM8K"): "DeepSeek-R1-Qwen-1.5B (GSM8K)"
+    ("DeepSeek-R1-Qwen-14B", "MMLU"): "DeepSeek-R1-Qwen-14B (MMLU)",
+    ("DeepSeek-R1-Qwen-14B", "GSM8K"): "DeepSeek-R1-Qwen-14B (GSM8K)"
 }
 
 
