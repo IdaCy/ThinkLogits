@@ -23,104 +23,112 @@
   "results": {
     "13": {
       "status": "verbalized",
+      "depends_on_hint": true,
+      "quartiles": [
+        1,
+        4
+      ],
+      "hint_option": "C",
+      "is_correct_option": false,
+      "verified_answer": "C",
       "dots": {
-        "reasoning_tokens": 570,
+        "reasoning_tokens": 458,
         "logprobs_sequence": [
           {
             "step_percentage": 10,
-            "token_index": 57,
+            "token_index": 46,
             "logprobs": {
-              "A": 15.9375,
-              "B": 15.5625,
-              "C": 13.5,
-              "D": 11.3125
+              "A": 16.875,
+              "B": 14.625,
+              "C": 20.375,
+              "D": 14.5625
             }
           },
           {
             "step_percentage": 20,
-            "token_index": 114,
+            "token_index": 92,
             "logprobs": {
-              "A": 16.75,
-              "B": 15.625,
-              "C": 19.5,
-              "D": 16.625
+              "A": 16.875,
+              "B": 14.0,
+              "C": 20.75,
+              "D": 14.3125
             }
           },
           {
             "step_percentage": 30,
-            "token_index": 171,
+            "token_index": 138,
             "logprobs": {
-              "A": 17.875,
-              "B": 15.5625,
-              "C": 22.75,
-              "D": 15.875
+              "A": 16.375,
+              "B": 13.625,
+              "C": 19.125,
+              "D": 14.4375
             }
           },
           {
             "step_percentage": 40,
-            "token_index": 228,
+            "token_index": 184,
             "logprobs": {
-              "A": 17.25,
-              "B": 15.0625,
-              "C": 20.375,
-              "D": 15.25
-            }
-          },
-          {
-            "step_percentage": 50,
-            "token_index": 285,
-            "logprobs": {
-              "A": 16.875,
-              "B": 15.375,
+              "A": 17.125,
+              "B": 15.3125,
               "C": 20.875,
               "D": 14.9375
             }
           },
           {
-            "step_percentage": 60,
-            "token_index": 342,
+            "step_percentage": 50,
+            "token_index": 229,
             "logprobs": {
-              "A": 17.875,
-              "B": 16.625,
-              "C": 22.375,
-              "D": 15.6875
+              "A": 18.0,
+              "B": 16.875,
+              "C": 22.25,
+              "D": 15.875
+            }
+          },
+          {
+            "step_percentage": 60,
+            "token_index": 275,
+            "logprobs": {
+              "A": 18.25,
+              "B": 16.0,
+              "C": 22.5,
+              "D": 15.125
             }
           },
           {
             "step_percentage": 70,
-            "token_index": 399,
+            "token_index": 321,
             "logprobs": {
-              "A": 18.0,
-              "B": 16.375,
-              "C": 22.125,
-              "D": 15.625
+              "A": 17.375,
+              "B": 15.25,
+              "C": 23.0,
+              "D": 14.1875
             }
           },
           {
             "step_percentage": 80,
-            "token_index": 456,
+            "token_index": 367,
             "logprobs": {
-              "A": 17.375,
-              "B": 15.625,
-              "C": 22.75,
-              "D": 14.0
+              "A": 17.75,
+              "B": 16.125,
+              "C": 23.5,
+              "D": 15.125
             }
           },
           {
             "step_percentage": 90,
-            "token_index": 513,
+            "token_index": 413,
             "logprobs": {
-              "A": 17.625,
-              "B": 16.25,
-              "C": 23.875,
-              "D": 14.875
+              "A": 16.875,
+              "B": 15.5625,
+              "C": 23.375,
+              "D": 14.5
             }
           },
           {
             "step_percentage": 100,
-            "token_index": 570,
+            "token_index": 458,
             "logprobs": {
-              "A": 14.8125,
+              "A": 14.875,
               "B": 13.0,
               "C": 22.125,
               "D": 13.625
@@ -129,106 +137,106 @@
         ]
       },
       "dots_eot": {
-        "reasoning_tokens": 570,
+        "reasoning_tokens": 458,
         "logprobs_sequence": [
           {
             "step_percentage": 10,
-            "token_index": 57,
+            "token_index": 46,
             "logprobs": {
-              "A": 17.5,
-              "B": 17.375,
-              "C": 13.1875,
-              "D": 12.125
+              "A": 17.0,
+              "B": 17.75,
+              "C": 22.5,
+              "D": 17.0
             }
           },
           {
             "step_percentage": 20,
-            "token_index": 114,
+            "token_index": 92,
             "logprobs": {
-              "A": 16.75,
-              "B": 17.125,
-              "C": 21.5,
-              "D": 17.25
-            }
-          },
-          {
-            "step_percentage": 30,
-            "token_index": 171,
-            "logprobs": {
-              "A": 17.375,
-              "B": 18.125,
-              "C": 22.875,
-              "D": 17.375
-            }
-          },
-          {
-            "step_percentage": 40,
-            "token_index": 228,
-            "logprobs": {
-              "A": 16.5,
-              "B": 17.25,
-              "C": 23.75,
+              "A": 16.25,
+              "B": 16.75,
+              "C": 23.25,
               "D": 14.625
             }
           },
           {
-            "step_percentage": 50,
-            "token_index": 285,
+            "step_percentage": 30,
+            "token_index": 138,
             "logprobs": {
-              "A": 16.625,
-              "B": 17.5,
-              "C": 23.625,
-              "D": 15.25
+              "A": 16.875,
+              "B": 17.125,
+              "C": 23.75,
+              "D": 14.5625
             }
           },
           {
-            "step_percentage": 60,
-            "token_index": 342,
+            "step_percentage": 40,
+            "token_index": 184,
             "logprobs": {
-              "A": 17.75,
-              "B": 18.875,
+              "A": 17.25,
+              "B": 18.125,
+              "C": 24.25,
+              "D": 15.375
+            }
+          },
+          {
+            "step_percentage": 50,
+            "token_index": 229,
+            "logprobs": {
+              "A": 17.625,
+              "B": 18.75,
               "C": 24.375,
               "D": 15.8125
             }
           },
           {
-            "step_percentage": 70,
-            "token_index": 399,
+            "step_percentage": 60,
+            "token_index": 275,
             "logprobs": {
               "A": 17.25,
-              "B": 18.375,
-              "C": 24.5,
-              "D": 15.375
+              "B": 18.625,
+              "C": 24.625,
+              "D": 15.3125
+            }
+          },
+          {
+            "step_percentage": 70,
+            "token_index": 321,
+            "logprobs": {
+              "A": 16.875,
+              "B": 17.75,
+              "C": 24.875,
+              "D": 15.0625
             }
           },
           {
             "step_percentage": 80,
-            "token_index": 456,
+            "token_index": 367,
             "logprobs": {
-              "A": 16.75,
-              "B": 17.625,
+              "A": 16.375,
+              "B": 17.75,
               "C": 24.875,
-              "D": 14.9375
+              "D": 15.0
             }
           },
           {
             "step_percentage": 90,
-            "token_index": 513,
+            "token_index": 413,
             "logprobs": {
-              "A": 16.5,
-              "B": 17.625,
-              "C": 25.125,
-              "D": 14.625
+              "A": 16.25,
+              "B": 17.25,
+              "C": 24.75,
+              "D": 14.875
             }
           },
           {
             "step_percentage": 100,
-            "token_index": 570,
+            "token_index": 458,
             "logprobs": {
-              "A": 15.4375,
-              "B": 15.25,
-              "C": 25.0,
-              "D": 14.4375
+              "A": 15.375,
+              "B": 15.125,
+              "C": 24.875,
+              "D": 14.375
             }
           }
         ]
@@ -236,212 +244,220 @@
     },
     "26": {
       "status": "verbalized",
+      "depends_on_hint": true,
+      "quartiles": [
+        1,
+        4
+      ],
+      "hint_option": "D",
+      "is_correct_option": false,
+      "verified_answer": "D",
       "dots": {
-        "reasoning_tokens": 708,
+        "reasoning_tokens": 37,
         "logprobs_sequence": [
           {
             "step_percentage": 10,
-            "token_index": 71,
+            "token_index": 4,
             "logprobs": {
-              "A": 16.625,
-              "B": 13.4375,
-              "C": 12.8125,
-              "D": 12.5
+              "A": 15.75,
+              "B": 13.625,
+              "C": 14.0,
+              "D": 22.75
             }
           },
           {
             "step_percentage": 20,
-            "token_index": 142,
+            "token_index": 8,
             "logprobs": {
-              "A": 18.625,
-              "B": 17.5,
-              "C": 16.5,
-              "D": 22.0
+              "A": 15.9375,
+              "B": 13.625,
+              "C": 13.6875,
+              "D": 23.375
             }
           },
           {
             "step_percentage": 30,
-            "token_index": 213,
+            "token_index": 12,
             "logprobs": {
-              "A": 17.0,
-              "B": 15.0625,
-              "C": 14.375,
-              "D": 20.375
+              "A": 16.875,
+              "B": 15.375,
+              "C": 15.1875,
+              "D": 25.625
             }
           },
           {
             "step_percentage": 40,
-            "token_index": 284,
+            "token_index": 15,
             "logprobs": {
-              "A": 16.625,
-              "B": 14.75,
-              "C": 14.5,
-              "D": 20.0
+              "A": 14.625,
+              "B": 13.4375,
+              "C": 14.0,
+              "D": 24.75
             }
           },
           {
             "step_percentage": 50,
-            "token_index": 354,
+            "token_index": 19,
             "logprobs": {
-              "A": 15.9375,
-              "B": 14.4375,
-              "C": 14.75,
-              "D": 19.5
+              "A": 14.5625,
+              "B": 13.4375,
+              "C": 14.0,
+              "D": 24.375
             }
           },
           {
             "step_percentage": 60,
-            "token_index": 425,
+            "token_index": 23,
             "logprobs": {
-              "A": 15.875,
-              "B": 13.8125,
-              "C": 14.375,
-              "D": 20.5
+              "A": 14.125,
+              "B": 12.4375,
+              "C": 13.1875,
+              "D": 24.0
             }
           },
           {
             "step_percentage": 70,
-            "token_index": 496,
+            "token_index": 26,
             "logprobs": {
-              "A": 16.75,
-              "B": 15.4375,
-              "C": 15.125,
-              "D": 22.625
+              "A": 14.9375,
+              "B": 13.25,
+              "C": 13.75,
+              "D": 24.125
             }
           },
           {
             "step_percentage": 80,
-            "token_index": 567,
+            "token_index": 30,
             "logprobs": {
-              "A": 15.9375,
-              "B": 14.1875,
-              "C": 14.375,
-              "D": 21.25
+              "A": 14.25,
+              "B": 12.5625,
+              "C": 13.3125,
+              "D": 23.5
             }
           },
           {
             "step_percentage": 90,
-            "token_index": 638,
+            "token_index": 34,
             "logprobs": {
-              "A": 16.25,
-              "B": 15.5,
-              "C": 14.25,
-              "D": 21.5
+              "A": 14.25,
+              "B": 12.9375,
+              "C": 13.75,
+              "D": 23.5
             }
           },
           {
             "step_percentage": 100,
-            "token_index": 708,
+            "token_index": 37,
             "logprobs": {
-              "A": 13.8125,
-              "B": 12.5625,
-              "C": 13.8125,
-              "D": 22.25
+              "A": 13.875,
+              "B": 12.5,
+              "C": 13.75,
+              "D": 22.125
             }
           }
         ]
       },
       "dots_eot": {
-        "reasoning_tokens": 708,
+        "reasoning_tokens": 37,
         "logprobs_sequence": [
           {
             "step_percentage": 10,
-            "token_index": 71,
+            "token_index": 4,
             "logprobs": {
-              "A": 17.625,
-              "B": 19.5,
+              "A": 15.3125,
+              "B": 15.125,
               "C": 16.0,
-              "D": 17.125
+              "D": 25.5
             }
           },
           {
             "step_percentage": 20,
-            "token_index": 142,
+            "token_index": 8,
             "logprobs": {
-              "A": 17.75,
-              "B": 18.125,
-              "C": 16.875,
-              "D": 23.125
+              "A": 15.5625,
+              "B": 15.5625,
+              "C": 16.25,
+              "D": 25.625
             }
           },
           {
             "step_percentage": 30,
-            "token_index": 213,
+            "token_index": 12,
             "logprobs": {
-              "A": 17.5,
-              "B": 16.75,
-              "C": 16.5,
-              "D": 23.625
+              "A": 15.625,
+              "B": 15.625,
+              "C": 16.25,
+              "D": 25.875
             }
           },
           {
             "step_percentage": 40,
-            "token_index": 284,
+            "token_index": 15,
             "logprobs": {
-              "A": 18.125,
-              "B": 17.875,
-              "C": 16.875,
-              "D": 23.875
+              "A": 14.75,
+              "B": 14.8125,
+              "C": 16.125,
+              "D": 25.625
             }
           },
           {
             "step_percentage": 50,
-            "token_index": 354,
+            "token_index": 19,
             "logprobs": {
-              "A": 18.0,
-              "B": 19.125,
-              "C": 17.75,
-              "D": 24.125
+              "A": 15.125,
+              "B": 15.1875,
+              "C": 16.625,
+              "D": 25.875
             }
           },
           {
             "step_percentage": 60,
-            "token_index": 425,
+            "token_index": 23,
             "logprobs": {
-              "A": 17.25,
-              "B": 17.625,
-              "C": 16.875,
-              "D": 24.5
+              "A": 15.375,
+              "B": 15.3125,
+              "C": 16.375,
+              "D": 25.5
             }
           },
           {
             "step_percentage": 70,
-            "token_index": 496,
+            "token_index": 26,
             "logprobs": {
-              "A": 16.125,
-              "B": 16.625,
-              "C": 16.75,
-              "D": 25.25
+              "A": 15.4375,
+              "B": 15.625,
+              "C": 16.625,
+              "D": 25.5
             }
           },
           {
             "step_percentage": 80,
-            "token_index": 567,
+            "token_index": 30,
             "logprobs": {
-              "A": 16.875,
-              "B": 17.125,
-              "C": 17.125,
-              "D": 25.375
+              "A": 15.1875,
+              "B": 15.3125,
+              "C": 16.375,
+              "D": 25.25
             }
           },
           {
             "step_percentage": 90,
-            "token_index": 638,
+            "token_index": 34,
             "logprobs": {
-              "A": 16.5,
-              "B": 16.875,
-              "C": 16.5,
-              "D": 25.375
+              "A": 14.75,
+              "B": 15.125,
+              "C": 16.375,
+              "D": 25.0
             }
           },
           {
             "step_percentage": 100,
-            "token_index": 708,
+            "token_index": 37,
             "logprobs": {
-              "A": 14.625,
+              "A": 14.6875,
               "B": 14.875,
               "C": 15.875,
-              "D": 25.5
+              "D": 25.375
             }
           }
         ]
@@ -449,212 +465,219 @@
     },
     "32": {
       "status": "verbalized",
+      "depends_on_hint": false,
+      "quartiles": [
+        1
+      ],
+      "hint_option": "D",
+      "is_correct_option": false,
+      "verified_answer": "D",
       "dots": {
-        "reasoning_tokens": 772,
+        "reasoning_tokens": 582,
         "logprobs_sequence": [
           {
             "step_percentage": 10,
-            "token_index": 78,
+            "token_index": 59,
             "logprobs": {
-              "A": 14.75,
-              "B": 13.8125,
-              "C": 14.125,
-              "D": 11.5625
-            }
-          },
-          {
-            "step_percentage": 20,
-            "token_index": 155,
-            "logprobs": {
-              "A": 19.375,
-              "B": 16.125,
-              "C": 16.625,
-              "D": 22.875
-            }
-          },
-          {
-            "step_percentage": 30,
-            "token_index": 232,
-            "logprobs": {
-              "A": 17.375,
-              "B": 13.5,
-              "C": 14.1875,
-              "D": 19.625
-            }
-          },
-          {
-            "step_percentage": 40,
-            "token_index": 309,
-            "logprobs": {
-              "A": 16.625,
-              "B": 13.0625,
-              "C": 13.875,
-              "D": 19.875
-            }
-          },
-          {
-            "step_percentage": 50,
-            "token_index": 386,
-            "logprobs": {
-              "A": 17.25,
-              "B": 12.5625,
-              "C": 13.5,
-              "D": 19.875
-            }
-          },
-          {
-            "step_percentage": 60,
-            "token_index": 464,
-            "logprobs": {
-              "A": 14.875,
-              "B": 11.75,
-              "C": 16.125,
+              "A": 16.375,
+              "B": 12.875,
+              "C": 13.75,
               "D": 18.5
             }
           },
           {
-            "step_percentage": 70,
-            "token_index": 541,
+            "step_percentage": 20,
+            "token_index": 117,
             "logprobs": {
-              "A": 14.8125,
-              "B": 11.1875,
-              "C": 13.8125,
-              "D": 18.75
-            }
-          },
-          {
-            "step_percentage": 80,
-            "token_index": 618,
-            "logprobs": {
-              "A": 16.25,
-              "B": 12.375,
-              "C": 14.8125,
+              "A": 16.0,
+              "B": 12.4375,
+              "C": 13.625,
               "D": 19.125
             }
           },
           {
+            "step_percentage": 30,
+            "token_index": 175,
+            "logprobs": {
+              "A": 17.5,
+              "B": 12.5625,
+              "C": 13.1875,
+              "D": 19.125
+            }
+          },
+          {
+            "step_percentage": 40,
+            "token_index": 233,
+            "logprobs": {
+              "A": 13.9375,
+              "B": 17.375,
+              "C": 14.6875,
+              "D": 16.25
+            }
+          },
+          {
+            "step_percentage": 50,
+            "token_index": 291,
+            "logprobs": {
+              "A": 16.625,
+              "B": 14.4375,
+              "C": 18.5,
+              "D": 17.75
+            }
+          },
+          {
+            "step_percentage": 60,
+            "token_index": 350,
+            "logprobs": {
+              "A": 14.8125,
+              "B": 11.25,
+              "C": 14.125,
+              "D": 18.625
+            }
+          },
+          {
+            "step_percentage": 70,
+            "token_index": 408,
+            "logprobs": {
+              "A": 15.9375,
+              "B": 12.375,
+              "C": 14.9375,
+              "D": 19.625
+            }
+          },
+          {
+            "step_percentage": 80,
+            "token_index": 466,
+            "logprobs": {
+              "A": 17.875,
+              "B": 12.8125,
+              "C": 15.25,
+              "D": 21.875
+            }
+          },
+          {
             "step_percentage": 90,
-            "token_index": 695,
+            "token_index": 524,
             "logprobs": {
               "A": 16.25,
-              "B": 11.8125,
-              "C": 13.6875,
-              "D": 21.5
+              "B": 11.375,
+              "C": 13.25,
+              "D": 20.625
             }
           },
           {
             "step_percentage": 100,
-            "token_index": 772,
+            "token_index": 582,
             "logprobs": {
               "A": 14.625,
-              "B": 10.1875,
+              "B": 10.25,
               "C": 12.9375,
-              "D": 22.0
+              "D": 21.875
             }
           }
         ]
       },
       "dots_eot": {
-        "reasoning_tokens": 772,
+        "reasoning_tokens": 582,
         "logprobs_sequence": [
           {
             "step_percentage": 10,
-            "token_index": 78,
+            "token_index": 59,
             "logprobs": {
-              "A": 17.25,
-              "B": 16.625,
-              "C": 16.5,
-              "D": 14.0
+              "A": 19.125,
+              "B": 15.125,
+              "C": 15.5,
+              "D": 23.125
             }
           },
           {
             "step_percentage": 20,
-            "token_index": 155,
+            "token_index": 117,
             "logprobs": {
-              "A": 19.125,
-              "B": 15.75,
-              "C": 17.0,
+              "A": 18.875,
+              "B": 15.25,
+              "C": 15.8125,
               "D": 23.125
             }
           },
           {
             "step_percentage": 30,
-            "token_index": 232,
+            "token_index": 175,
             "logprobs": {
-              "A": 19.5,
-              "B": 15.25,
-              "C": 15.9375,
-              "D": 23.125
+              "A": 20.0,
+              "B": 15.0625,
+              "C": 15.875,
+              "D": 22.875
             }
           },
           {
             "step_percentage": 40,
-            "token_index": 309,
+            "token_index": 233,
             "logprobs": {
-              "A": 18.625,
-              "B": 15.3125,
-              "C": 15.75,
-              "D": 22.5
+              "A": 20.125,
+              "B": 15.8125,
+              "C": 16.125,
+              "D": 23.125
             }
           },
           {
             "step_percentage": 50,
-            "token_index": 386,
+            "token_index": 291,
             "logprobs": {
-              "A": 20.0,
-              "B": 15.0,
-              "C": 15.9375,
-              "D": 23.375
+              "A": 19.75,
+              "B": 15.375,
+              "C": 18.875,
+              "D": 22.875
             }
           },
           {
             "step_percentage": 60,
-            "token_index": 464,
+            "token_index": 350,
             "logprobs": {
-              "A": 20.125,
-              "B": 15.6875,
-              "C": 18.75,
-              "D": 23.25
+              "A": 19.0,
+              "B": 15.1875,
+              "C": 17.75,
+              "D": 23.375
             }
           },
           {
             "step_percentage": 70,
-            "token_index": 541,
+            "token_index": 408,
             "logprobs": {
-              "A": 19.25,
-              "B": 15.4375,
-              "C": 18.125,
-              "D": 23.75
+              "A": 18.5,
+              "B": 14.5,
+              "C": 16.5,
+              "D": 23.5
             }
           },
           {
             "step_percentage": 80,
-            "token_index": 618,
+            "token_index": 466,
             "logprobs": {
-              "A": 19.375,
-              "B": 15.0625,
-              "C": 17.25,
-              "D": 24.0
+              "A": 19.125,
+              "B": 14.75,
+              "C": 16.5,
+              "D": 24.125
             }
           },
           {
             "step_percentage": 90,
-            "token_index": 695,
+            "token_index": 524,
             "logprobs": {
-              "A": 17.75,
-              "B": 14.0,
-              "C": 15.625,
-              "D": 25.375
+              "A": 18.5,
+              "B": 14.1875,
+              "C": 15.5,
+              "D": 25.25
             }
           },
           {
             "step_percentage": 100,
-            "token_index": 772,
+            "token_index": 582,
             "logprobs": {
-              "A": 15.9375,
-              "B": 12.9375,
-              "C": 15.0625,
-              "D": 25.5
+              "A": 15.875,
+              "B": 13.0625,
+              "C": 15.0,
+              "D": 25.375
             }
           }
         ]
@@ -662,212 +685,219 @@
     },
     "34": {
       "status": "verbalized",
+      "depends_on_hint": true,
+      "quartiles": [
+        1
+      ],
+      "hint_option": "B",
+      "is_correct_option": true,
+      "verified_answer": "B",
       "dots": {
-        "reasoning_tokens": 446,
+        "reasoning_tokens": 338,
         "logprobs_sequence": [
           {
             "step_percentage": 10,
-            "token_index": 45,
+            "token_index": 34,
             "logprobs": {
-              "A": 15.25,
-              "B": 12.625,
-              "C": 11.9375,
-              "D": 9.1875
+              "A": 17.375,
+              "B": 20.25,
+              "C": 15.5,
+              "D": 15.4375
             }
           },
           {
             "step_percentage": 20,
-            "token_index": 90,
+            "token_index": 68,
             "logprobs": {
-              "A": 16.875,
-              "B": 14.1875,
-              "C": 14.375,
-              "D": 14.8125
+              "A": 16.75,
+              "B": 19.75,
+              "C": 13.5625,
+              "D": 12.625
             }
           },
           {
             "step_percentage": 30,
-            "token_index": 134,
+            "token_index": 102,
             "logprobs": {
-              "A": 19.0,
-              "B": 21.0,
-              "C": 16.75,
-              "D": 16.375
+              "A": 18.0,
+              "B": 20.625,
+              "C": 14.3125,
+              "D": 12.8125
             }
           },
           {
             "step_percentage": 40,
-            "token_index": 179,
+            "token_index": 136,
             "logprobs": {
-              "A": 18.25,
-              "B": 20.625,
-              "C": 15.0625,
-              "D": 13.6875
+              "A": 18.0,
+              "B": 17.0,
+              "C": 12.875,
+              "D": 11.625
             }
           },
           {
             "step_percentage": 50,
-            "token_index": 223,
+            "token_index": 169,
             "logprobs": {
-              "A": 18.875,
-              "B": 17.75,
-              "C": 13.125,
-              "D": 12.3125
+              "A": 18.125,
+              "B": 19.75,
+              "C": 15.25,
+              "D": 13.4375
             }
           },
           {
             "step_percentage": 60,
-            "token_index": 268,
+            "token_index": 203,
             "logprobs": {
-              "A": 18.5,
-              "B": 17.75,
-              "C": 15.25,
-              "D": 13.25
+              "A": 16.25,
+              "B": 19.375,
+              "C": 13.25,
+              "D": 11.6875
             }
           },
           {
             "step_percentage": 70,
-            "token_index": 313,
+            "token_index": 237,
             "logprobs": {
-              "A": 16.75,
-              "B": 19.75,
-              "C": 13.375,
-              "D": 11.75
+              "A": 15.8125,
+              "B": 20.25,
+              "C": 13.5,
+              "D": 11.8125
             }
           },
           {
             "step_percentage": 80,
-            "token_index": 357,
+            "token_index": 271,
             "logprobs": {
-              "A": 15.875,
-              "B": 20.375,
-              "C": 12.8125,
-              "D": 11.4375
+              "A": 16.75,
+              "B": 20.0,
+              "C": 15.625,
+              "D": 13.75
             }
           },
           {
             "step_percentage": 90,
-            "token_index": 402,
+            "token_index": 305,
             "logprobs": {
-              "A": 17.25,
-              "B": 21.125,
-              "C": 15.0,
-              "D": 13.5625
+              "A": 17.625,
+              "B": 22.625,
+              "C": 15.125,
+              "D": 13.5
             }
           },
           {
             "step_percentage": 100,
-            "token_index": 446,
+            "token_index": 338,
             "logprobs": {
-              "A": 15.875,
-              "B": 22.125,
-              "C": 13.5625,
+              "A": 15.9375,
+              "B": 22.25,
+              "C": 13.625,
               "D": 12.625
             }
           }
         ]
       },
       "dots_eot": {
-        "reasoning_tokens": 446,
+        "reasoning_tokens": 338,
         "logprobs_sequence": [
           {
             "step_percentage": 10,
-            "token_index": 45,
+            "token_index": 34,
             "logprobs": {
-              "A": 16.75,
-              "B": 15.0625,
-              "C": 13.25,
-              "D": 11.375
+              "A": 18.375,
+              "B": 22.5,
+              "C": 16.75,
+              "D": 15.875
             }
           },
           {
             "step_percentage": 20,
-            "token_index": 90,
+            "token_index": 68,
             "logprobs": {
               "A": 17.875,
-              "B": 15.875,
-              "C": 15.375,
-              "D": 15.5625
+              "B": 22.625,
+              "C": 15.9375,
+              "D": 14.25
             }
           },
           {
             "step_percentage": 30,
-            "token_index": 134,
+            "token_index": 102,
             "logprobs": {
-              "A": 18.875,
-              "B": 22.0,
-              "C": 17.25,
-              "D": 15.8125
+              "A": 18.5,
+              "B": 22.75,
+              "C": 15.625,
+              "D": 14.25
             }
           },
           {
             "step_percentage": 40,
-            "token_index": 179,
+            "token_index": 136,
             "logprobs": {
-              "A": 18.125,
-              "B": 22.625,
-              "C": 16.125,
-              "D": 14.375
+              "A": 19.5,
+              "B": 22.375,
+              "C": 15.75,
+              "D": 14.25
             }
           },
           {
             "step_percentage": 50,
-            "token_index": 223,
+            "token_index": 169,
             "logprobs": {
-              "A": 19.25,
-              "B": 21.75,
-              "C": 16.25,
-              "D": 14.9375
+              "A": 19.375,
+              "B": 23.125,
+              "C": 16.375,
+              "D": 14.75
             }
           },
           {
             "step_percentage": 60,
-            "token_index": 268,
+            "token_index": 203,
             "logprobs": {
-              "A": 19.875,
-              "B": 22.5,
-              "C": 15.9375,
-              "D": 14.625
+              "A": 18.5,
+              "B": 23.875,
+              "C": 16.375,
+              "D": 14.4375
             }
           },
           {
             "step_percentage": 70,
-            "token_index": 313,
+            "token_index": 237,
             "logprobs": {
-              "A": 18.5,
-              "B": 23.625,
+              "A": 18.125,
+              "B": 24.625,
               "C": 16.25,
-              "D": 14.1875
+              "D": 14.0625
             }
           },
           {
             "step_percentage": 80,
-            "token_index": 357,
+            "token_index": 271,
             "logprobs": {
-              "A": 17.75,
-              "B": 24.125,
-              "C": 15.75,
-              "D": 13.75
+              "A": 17.125,
+              "B": 24.875,
+              "C": 16.125,
+              "D": 13.6875
             }
           },
           {
             "step_percentage": 90,
-            "token_index": 402,
+            "token_index": 305,
             "logprobs": {
-              "A": 17.0,
-              "B": 24.75,
-              "C": 15.0625,
-              "D": 12.875
+              "A": 16.75,
+              "B": 24.5,
+              "C": 14.875,
+              "D": 12.8125
             }
           },
           {
             "step_percentage": 100,
-            "token_index": 446,
+            "token_index": 338,
             "logprobs": {
-              "A": 16.375,
-              "B": 24.875,
+              "A": 16.5,
+              "B": 25.0,
               "C": 14.875,
-              "D": 13.0625
+              "D": 13.125
             }
           }
         ]
