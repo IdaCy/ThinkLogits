@@ -47,9 +47,10 @@ def load_data(data_path: str) -> List[Dict]:
         logging.error(f"An unexpected error occurred loading {data_path}: {e}")
         return []
 
-def save_results(results: List[Dict], hint_type: str, model_name:str, n_questions: int):
-    """Saves the results to a JSON file in the hint_type directory."""
-    output_path = os.path.join("data", hint_type, f"completions_{model_name}_with_{str(n_questions)}.json")
+def save_results(results: List[Dict], dataset_name: str, hint_type: str, model_name:str, n_questions: int):
+    """Saves the results to a JSON file in the dataset/model/hint_type directory."""
+    # Construct path including model name directory and remove model name from filename
+    output_path = os.path.join("data", dataset_name, model_name, hint_type, f"completions_with_{str(n_questions)}.json")
     try:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, 'w') as f:
@@ -64,10 +65,11 @@ def generate_dataset_completions(
     tokenizer,
     model_name,
     device,
+    dataset_name: str,
     hint_types: List[str], # e.g., ["gsm_mc_urgency", "gsm_mc_psychophancy"]
     batch_size: int = 8,
     max_new_tokens: Optional[int] = 512,
-    n_questions: int = None,
+    n_questions: Optional[int] = None,
 ):
     """
     Loads a model, processes datasets for specified hint types (with and without hints),
@@ -89,8 +91,10 @@ def generate_dataset_completions(
     # --- 3. Process each hint type dataset --- 
     for hint_type in hint_types:
         logging.info(f"--- Processing dataset for hint type: {hint_type} ---")
-        questions_data_path = os.path.join("data", "gsm_mc_stage_formatted.json")
-        hints_data_path = os.path.join("data", f"{hint_type}", "hints.json")
+        # Use the standardized input filename
+        questions_data_path = os.path.join("data", dataset_name, "input_mcq_data.json")
+        # Load hints from the dataset directory, using the new filename format
+        hints_data_path = os.path.join("data", dataset_name, f"hints_{hint_type}.json")
         
         # Load questions and hints data
         data = load_data(questions_data_path)[:n_questions]  # Only use the first 10 entries
@@ -118,7 +122,7 @@ def generate_dataset_completions(
             chat_template, batch_size, max_new_tokens
         )
 
-        save_results(results, hint_type, model_name, n_questions)
+        save_results(results, dataset_name, hint_type, model_name, n_questions)
         
 
     # --- 4. Cleanup --- 
@@ -136,19 +140,20 @@ def generate_dataset_completions(
 
 # Example of how to call the function (replace main() block)
 if __name__ == "__main__":
-    generate_dataset_completions(
-        model_name="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        hint_types=["induced_urgency"], 
-        batch_size=4,
-        max_new_tokens=1024
-    )
-#     # Example with max_new_tokens=None
-#     # generate_dataset_completions(
-#     #     model_name="mistralai/Mistral-7B-Instruct-v0.2",
-#     #     hint_types=["gsm_mc_urgency"],
-#     #     batch_size=2,
-#     #     max_new_tokens=None
-#     # )
+    # Example Usage: Load model/tokenizer first (implementation depends on model_handler.py)
+    # model, tokenizer, model_name_loaded, device = load_model_and_tokenizer("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B")
+    # generate_dataset_completions(
+    #     model=model,
+    #     tokenizer=tokenizer,
+    #     model_name=model_name_loaded,
+    #     device=device,
+    #     dataset_name="gsm8k",  # Provide the dataset name
+    #     hint_types=["induced_urgency"],
+    #     batch_size=4,
+    #     max_new_tokens=1024,
+    #     n_questions=10 # Example: limit to 10 questions
+    # )
+    pass # Placeholder, actual model loading needed
 
 
 # Remove the old main() function and argparse code 
